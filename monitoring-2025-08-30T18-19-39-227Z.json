@@ -1,0 +1,424 @@
+{
+  "timestamp": "2025-08-30T18:19:39.225Z",
+  "url": "https://movne.co.il",
+  "performance": {
+    "domContentLoaded": null,
+    "loadComplete": null,
+    "firstPaint": 152,
+    "transferSize": 46,
+    "resourceCount": 19
+  },
+  "technical": {
+    "title": "Movne - להשקיע במוצרים מובנים במגרש של הגדולים",
+    "titleLength": 46,
+    "metaDescription": "מוצרים מובנים עם פוטנציאל תשואה גבוה - השקעות מובנות מקצועיות עם יחס אישי ושקיפות מלאה. גלו איך השקעות מובנות יכולות לספק איזון בין ביטחון לצמיחה.",
+    "metaDescLength": 146,
+    "h1Tags": [
+      "להשקיע במוצרים מובנים   במגרש של הגדולים"
+    ],
+    "h2Tags": [
+      "ניהול מקצועיואישי",
+      "פיזור סיכונים ואסטרטגיות מתקדמות",
+      "אמינותוביטחון",
+      "השקעות בחו\"ל עם    המוסדות הפיננסים הגדולים והבטוחים."
+    ],
+    "images": [
+      {
+        "src": "logo.svg",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "logo.svg",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "logo.svg",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "hero-bg.svg",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "MISSING",
+        "loading": "auto"
+      },
+      {
+        "src": "svg%3E",
+        "alt": "אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה",
+        "loading": "auto"
+      }
+    ],
+    "internalLinks": 41,
+    "robotsMeta": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  },
+  "keywordAnalysis": {
+    "keywords": {
+      "מוצרים מובנים": {
+        "count": 4,
+        "density": "9.52%",
+        "inTitle": true,
+        "inMeta": true,
+        "inH1": true
+      },
+      "יעוץ השקעות": {
+        "count": 0,
+        "density": "0.00%",
+        "inTitle": false,
+        "inMeta": false,
+        "inH1": false
+      },
+      "השקעות מובנות": {
+        "count": 0,
+        "density": "0.00%",
+        "inTitle": false,
+        "inMeta": true,
+        "inH1": false
+      },
+      "מוצרי השקעה": {
+        "count": 0,
+        "density": "0.00%",
+        "inTitle": false,
+        "inMeta": false,
+        "inH1": false
+      },
+      "ייעוץ פיננסי": {
+        "count": 0,
+        "density": "0.00%",
+        "inTitle": false,
+        "inMeta": false,
+        "inH1": false
+      },
+      "שירותי השקעה": {
+        "count": 0,
+        "density": "0.00%",
+        "inTitle": false,
+        "inMeta": false,
+        "inH1": false
+      },
+      "פורטפוליו השקעות": {
+        "count": 0,
+        "density": "0.00%",
+        "inTitle": false,
+        "inMeta": false,
+        "inH1": false
+      },
+      "משקיעים מתקדמים": {
+        "count": 0,
+        "density": "0.00%",
+        "inTitle": false,
+        "inMeta": false,
+        "inH1": false
+      }
+    },
+    "totalWords": 42,
+    "hebrewRatio": "81.3%"
+  },
+  "content": {
+    "wordCount": 42,
+    "hasContactInfo": false,
+    "hasCallToAction": true,
+    "paragraphCount": 23,
+    "listCount": 8
+  },
+  "alerts": [
+    {
+      "type": "SEO",
+      "message": "Missing keywords: יעוץ השקעות, השקעות מובנות, מוצרי השקעה, ייעוץ פיננסי, שירותי השקעה, פורטפוליו השקעות, משקיעים מתקדמים"
+    },
+    {
+      "type": "ACCESSIBILITY",
+      "message": "60 images missing alt text"
+    }
+  ],
+  "scores": {
+    "performance": 50,
+    "seo": 75,
+    "content": 13.860000000000001
+  }
+}
