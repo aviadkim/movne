@@ -42,10 +42,11 @@ async function finalYoastAutomation() {
   ];
   
   try {
-    // Login to WordPress
-    await page.goto('https://www.movne.co.il/wp-admin/');
-    await page.fill('#user_login', 'aviad@kimfo-fs.com');
-    await page.fill('#user_pass', 'Kimfo1982');
+    // Login to WordPress - using environment variables
+    const config = require('./config');
+    await page.goto(config.wordpress.adminUrl);
+    await page.fill('#user_login', config.wordpress.username);
+    await page.fill('#user_pass', config.wordpress.password);
     await page.click('#wp-submit');
     await page.waitForSelector('#dashboard-widgets', { timeout: 10000 });
     

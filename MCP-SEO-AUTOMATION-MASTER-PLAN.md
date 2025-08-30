@@ -74,8 +74,8 @@ const wpConfig = {
   adminUrl: 'https://www.movne.co.il/wp-admin/',
   authentication: {
     type: 'jwt',
-    username: 'aviad@kimfo-fs.com',
-    password: 'Kimfo1982'
+    username: process.env.WP_USERNAME,
+    password: process.env.WP_PASSWORD
   },
   language: 'he_IL',
   plugins: {
@@ -485,8 +485,8 @@ class MovneSEOMasterAutomation {
       adminUrl: 'https://www.movne.co.il/wp-admin/',
       authentication: {
         type: 'app_password', // Most reliable method
-        username: 'aviad@kimfo-fs.com',
-        password: 'Kimfo1982'
+        username: process.env.WP_USERNAME,
+        password: process.env.WP_PASSWORD
       },
       language: 'he_IL',
       timezone: 'Asia/Jerusalem',

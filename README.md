@@ -98,12 +98,17 @@ npm install playwright
 ```
 
 ### WordPress Credentials
-- Site: https://movne.co.il/wp-admin/
-- Login: aviad@kimfo-fs.com
-- Password: [Use existing credentials]
+Create a `.env` file with your credentials:
+```
+WP_USERNAME=your_wp_username
+WP_PASSWORD=your_wp_password
+WP_SITE_URL=https://yoursite.com
+WHATSAPP_NUMBER=972XXXXXXXXX
+SITE_DOMAIN=yoursite.com
+```
 
 ### WhatsApp Configuration
-- Number: 972544533709 (configured and hidden)
+- Configure your number in the .env file
 - Message: "שלום, אני מעוניין במידע על שיווק השקעות במוצרים מובנים"
 
 ## 📈 Expected Results

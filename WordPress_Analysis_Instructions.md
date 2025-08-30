@@ -2,8 +2,8 @@
 
 ## Login Information
 - **Staging Site Admin:** https://movne.co.il/movne/wp-admin/
-- **Username:** aviad@kimfo-fs.com
-- **Password:** Kimfo1982
+- **Username:** [Set in .env file as WP_USERNAME]
+- **Password:** [Set in .env file as WP_PASSWORD]
 - **Main Site:** https://movne.co.il
 - **Staging Site:** https://movne.co.il/movne/
 
