@@ -1,0 +1,54 @@
+{
+  "timestamp": "2025-08-30T21:56:34.511Z",
+  "opportunities": [
+    "WhatsApp integration gap: 4/4 competitors missing this",
+    "Educational content gap: 4/4 lack educational Hebrew content",
+    "SEO opportunity: 4/4 competitors rank poorly for key terms"
+  ],
+  "competitorData": [
+    {
+      "name": "הלמן אלדובי",
+      "domain": "halman-aldubi.co.il",
+      "overallScore": 29,
+      "gaps": {
+        "whatsapp": true,
+        "speed": false,
+        "education": true,
+        "seo": true
+      }
+    },
+    {
+      "name": "פסגות",
+      "domain": "psagot.co.il",
+      "overallScore": 14,
+      "gaps": {
+        "whatsapp": true,
+        "speed": false,
+        "education": true,
+        "seo": true
+      }
+    },
+    {
+      "name": "מיטב דש",
+      "domain": "meitav-ds.co.il",
+      "overallScore": 0,
+      "gaps": {
+        "whatsapp": true,
+        "speed": false,
+        "education": true,
+        "seo": true
+      }
+    },
+    {
+      "name": "מגדל",
+      "domain": "migdal.co.il",
+      "overallScore": 0,
+      "gaps": {
+        "whatsapp": true,
+        "speed": false,
+        "education": true,
+        "seo": true
+      }
+    }
+  ]
+}
