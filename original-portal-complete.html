@@ -1,0 +1,1482 @@
+<!DOCTYPE html><html lang="he" dir="rtl" class="wp-theme-oribsn" data-uw-w-loader=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פורטל למשקיעים כשירים - Movne</title>
+    
+    <!-- Original Website Stylesheets -->
+    <link rel="stylesheet" id="wp-block-library-rtl-css" href="https://movne.co.il/wp-includes/css/dist/block-library/style-rtl.min.css?ver=6.8.2" type="text/css" media="all">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/rtl.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick.css">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/modal_video/modal-video.min.css">
+    <link rel="stylesheet" type="text/css" href="https://movne.co.il/wp-content/themes/oribsn/style.css?v=1758004795">
+    <link rel="stylesheet" id="mediaelement-css" href="https://movne.co.il/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-mediaelement-css" href="https://movne.co.il/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.8.2" type="text/css" media="all">
+    
+    <style>
+        /* === PROFESSIONAL TOP BANNER === */
+        .exclusive-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #152135 0%, #34394d 50%, #152135 100%);
+            color: #ffffff;
+            padding: 12px 20px;
+            text-align: center;
+            z-index: 10000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Simona', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #ff9d0a;
+        }
+
+        .exclusive-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 157, 10, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .exclusive-banner-text {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exclusive-banner-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #ff9d0a;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .exclusive-banner-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        /* Adjust body and header for banner space */
+        body.has-banner {
+            padding-top: 50px;
+        }
+
+        body.has-banner .header {
+            top: 50px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .exclusive-banner {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+
+            body.has-banner {
+                padding-top: 44px;
+            }
+
+            body.has-banner .header {
+                top: 44px;
+            }
+
+            .exclusive-banner-icon {
+                width: 16px;
+                height: 16px;
+            }
+
+            .exclusive-banner-icon::after {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        /* === PROFESSIONAL MOVNE DESIGN SYSTEM === */
+        :root {
+            /* === EXACT BRAND COLORS FROM MAIN SITE === */
+            --color-primary: #000000;
+            --color-secondary: #ffffff;
+            --color-brand-orange: #ff9d0a;
+            --color-brand-blue: #0073aa;
+            --color-dark-primary: #152135;
+            --color-dark-secondary: #34394d;
+            --color-dark-accent: #222222;
+            --color-gray-light: #eeeeee;
+            --color-gray-medium: #abb8c3;
+            
+            /* Professional glass effects */
+            --glass-white-high: #ffffffe6;
+            --glass-white-medium: #ffffff99;
+            --glass-white-low: #ffffff54;
+            --glass-dark: #323232b3;
+            
+            /* === EXTRACTED TYPOGRAPHY === */
+            --font-primary: Simona, sans-serif;
+            --font-secondary: Arial, sans-serif;
+            --font-fallback: Helvetica, Arial, sans-serif;
+            
+            /* Professional font sizes */
+            --text-xs: 11px;
+            --text-sm: 13px;
+            --text-base: 16px;
+            --text-lg: 18px;
+            --text-xl: 20px;
+            --text-2xl: 24px;
+            --text-3xl: 27px;
+            --text-4xl: 33px;
+            --text-5xl: 45px;
+            --text-6xl: 52px;
+            
+            /* Font weights */
+            --weight-normal: 400;
+            --weight-semibold: 600;
+            --weight-bold: 700;
+            
+            /* === PROFESSIONAL SPACING === */
+            --space-xs: 8px;
+            --space-sm: 12px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+            --space-4xl: 80px;
+            --space-5xl: 96px;
+            
+            /* === PROFESSIONAL EFFECTS === */
+            --shadow-subtle: 0 2px 8px rgba(21, 33, 53, 0.08);
+            --shadow-medium: 0 4px 16px rgba(21, 33, 53, 0.12);
+            --shadow-strong: 0 8px 32px rgba(21, 33, 53, 0.16);
+            --shadow-brand: 0 4px 20px rgba(255, 157, 10, 0.25);
+            
+            /* Border radius */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-full: 9999px;
+        }
+
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: var(--font-primary) !important;
+            background-color: var(--color-secondary);
+            color: var(--color-dark-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* === HERO SECTION === */
+        .portal-hero {
+            background: linear-gradient(
+                135deg, 
+                rgba(21, 33, 53, 0.92) 0%, 
+                rgba(52, 57, 77, 0.88) 50%, 
+                rgba(34, 34, 34, 0.92) 100%
+            ),
+            url('https://movne.co.il/wp-content/uploads/2025/09/Group-206-8-scaled.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--color-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portal-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(21, 33, 53, 0.1) 0%,
+                rgba(21, 33, 53, 0.4) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            padding: 0 var(--space-xl);
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-primary);
+            font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+            font-weight: var(--weight-bold);
+            margin-bottom: var(--space-2xl);
+            line-height: 1.2;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .subtitle {
+            font-size: clamp(var(--text-lg), 3vw, var(--text-2xl));
+            margin-bottom: var(--space-3xl);
+            font-weight: var(--weight-normal);
+            opacity: 0.95;
+            line-height: 1.4;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        /* === PROFESSIONAL LOGIN OPTIONS === */
+        .login-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: var(--space-2xl);
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: var(--space-3xl);
+            align-items: stretch;
+        }
+
+        .login-card {
+            background: var(--glass-white-high);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-3xl);
+            color: var(--color-dark-primary);
+            text-align: center;
+            border: 1px solid rgba(255, 157, 10, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-medium);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: var(--radius-xl);
+            pointer-events: none;
+        }
+
+        .login-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-strong);
+            border-color: rgba(255, 157, 10, 0.2);
+            background: var(--color-secondary);
+        }
+
+        .login-card h3 {
+            font-size: var(--text-2xl);
+            font-weight: var(--weight-bold);
+            margin-bottom: var(--space-lg);
+            color: var(--color-dark-primary);
+            font-family: var(--font-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-card p {
+            font-size: var(--text-base);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+            opacity: 0.85;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Card structure for perfect alignment */
+        .card-header {
+            flex: 0 0 auto;
+            margin-bottom: var(--space-lg);
+        }
+
+        .card-action {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        .card-footer {
+            flex: 0 0 auto;
+            margin-top: var(--space-lg);
+        }
+
+        .button-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        /* === PROFESSIONAL FORM STYLES === */
+        .email-login-form {
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .email-input {
+            width: 100%;
+            padding: var(--space-md) var(--space-lg);
+            border: 2px solid var(--color-gray-light);
+            border-radius: var(--radius-md);
+            font-size: var(--text-base);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+            direction: ltr;
+            transition: all 0.3s ease;
+            font-family: var(--font-primary);
+            box-sizing: border-box;
+            background: var(--color-secondary);
+            font-weight: var(--weight-normal);
+        }
+
+        .email-input:focus {
+            border-color: var(--color-brand-blue);
+            box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1);
+            outline: none;
+        }
+
+        .email-input::placeholder {
+            color: var(--color-gray-medium);
+            font-weight: var(--weight-normal);
+        }
+
+        /* === CONSISTENT BUTTON STYLES === */
+        .cta-button {
+            background: var(--color-brand-orange);
+            color: var(--color-secondary) !important;
+            padding: var(--space-md) var(--space-xl);
+            font-size: var(--text-base);
+            font-weight: var(--weight-semibold);
+            border: none;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-brand);
+            cursor: pointer;
+            font-family: var(--font-primary);
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            height: 54px;
+            line-height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 157, 10, 0.4);
+            background: var(--color-dark-accent);
+            color: var(--color-secondary) !important;
+            text-decoration: none;
+        }
+
+        .cta-button:focus {
+            outline: 3px solid rgba(255, 157, 10, 0.3);
+            outline-offset: 2px;
+        }
+
+        /* Secondary button - professional blue */
+        .cta-button.secondary {
+            background: var(--color-brand-blue);
+            box-shadow: 0 4px 20px rgba(0, 115, 170, 0.25);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--color-dark-primary);
+            box-shadow: 0 8px 25px rgba(0, 115, 170, 0.4);
+        }
+
+        /* === PROFESSIONAL DIVIDER === */
+        .divider {
+            text-align: center;
+            margin: var(--space-3xl) 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .divider span {
+            background: var(--color-dark-primary);
+            padding: 0 var(--space-lg);
+            color: var(--color-secondary);
+            font-weight: var(--weight-semibold);
+            position: relative;
+            z-index: 1;
+            font-size: var(--text-sm);
+            border-radius: var(--radius-sm);
+        }
+
+        /* === MAIN CONTENT === */
+        .portal-content {
+            background: var(--color-secondary);
+            padding: var(--space-4xl) 0;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .info-section {
+            background: var(--color-secondary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-4xl);
+            box-shadow: var(--shadow-subtle);
+            margin-bottom: var(--space-3xl);
+            border: 1px solid rgba(52, 57, 77, 0.06);
+        }
+
+        .info-section h2 {
+            font-family: var(--font-primary);
+            font-size: var(--text-4xl);
+            color: var(--color-dark-primary);
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+            font-weight: var(--weight-bold);
+            line-height: 1.3;
+        }
+
+        .info-item {
+            background: linear-gradient(135deg, var(--color-gray-light) 0%, var(--color-secondary) 100%);
+            border-radius: var(--radius-md);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-lg);
+            border-right: 4px solid var(--color-brand-orange);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .info-item:hover {
+            transform: translateX(-6px);
+            box-shadow: var(--shadow-medium);
+            border-right-width: 6px;
+        }
+
+        .info-item h3 {
+            color: var(--color-dark-primary);
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-lg);
+            font-weight: var(--weight-bold);
+            font-family: var(--font-primary);
+            line-height: 1.4;
+        }
+
+        .info-item p {
+            color: var(--color-dark-primary);
+            opacity: 0.85;
+            line-height: 1.7;
+            margin: 0;
+            font-size: var(--text-base);
+        }
+
+        /* === PROFESSIONAL IMAGE SECTION === */
+        .hero-image-section {
+            background: var(--color-secondary);
+            padding: var(--space-4xl) 0 var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .hero-image-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .professional-image {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-medium);
+            margin-bottom: var(--space-2xl);
+            transition: all 0.3s ease;
+        }
+
+        .professional-image:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-strong);
+        }
+
+        /* === PROFESSIONAL QUALIFICATION BADGES === */
+        .qualification-badges {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin: var(--space-3xl) 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, var(--color-brand-orange) 0%, var(--color-dark-accent) 100%);
+            color: var(--color-secondary);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: var(--weight-semibold);
+            box-shadow: var(--shadow-brand);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 157, 10, 0.2);
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 157, 10, 0.3);
+        }
+
+        .image-caption {
+            font-size: var(--text-base);
+            color: var(--color-dark-primary);
+            opacity: 0.7;
+            font-style: italic;
+            margin-top: var(--space-lg);
+            line-height: 1.6;
+        }
+
+        /* === PROFESSIONAL CTA SECTION === */
+        .cta-section {
+            text-align: center;
+            margin-top: var(--space-3xl);
+            padding: var(--space-3xl);
+            background: linear-gradient(135deg, rgba(255, 157, 10, 0.04) 0%, rgba(52, 57, 77, 0.02) 100%);
+            border-radius: var(--radius-2xl);
+            border: 1px solid rgba(255, 157, 10, 0.08);
+        }
+
+        .cta-section p {
+            margin-bottom: var(--space-lg);
+            font-size: var(--text-lg);
+            color: var(--color-dark-primary);
+            font-weight: var(--weight-semibold);
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .portal-hero {
+                min-height: 60vh;
+                background-attachment: scroll;
+            }
+
+            .hero-content {
+                padding: 0 var(--space-lg);
+            }
+
+            .login-options {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+                margin-top: var(--space-2xl);
+            }
+
+            .login-card {
+                padding: var(--space-2xl) var(--space-lg);
+            }
+
+            .info-section {
+                padding: var(--space-2xl) var(--space-lg);
+            }
+
+            .info-item {
+                padding: var(--space-lg);
+            }
+
+            .professional-image {
+                height: 250px;
+            }
+
+            .qualification-badges {
+                gap: var(--space-md);
+            }
+
+            .badge {
+                font-size: var(--text-xs);
+                padding: var(--space-xs) var(--space-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portal-hero {
+                min-height: 50vh;
+            }
+
+            .login-card {
+                padding: var(--space-lg) var(--space-md);
+            }
+
+            .hero-content h1 {
+                font-size: var(--text-3xl);
+            }
+
+            .hero-content .subtitle {
+                font-size: var(--text-lg);
+            }
+        }
+
+        /* === SMOOTH ANIMATIONS === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+        }
+
+        .slide-in-left {
+            animation: slideInFromLeft 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+        /* === LOADING STATES === */
+        .loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 18px;
+            height: 18px;
+            margin: -9px 0 0 -9px;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--color-secondary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* === ACCESSIBILITY === */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (prefers-contrast: high) {
+            .login-card {
+                border-width: 2px;
+                border-color: var(--color-dark-primary);
+            }
+
+            .info-item {
+                border-right-width: 6px;
+            }
+        }
+
+        /* === PROFESSIONAL HOVER STATES === */
+        @media (hover: hover) {
+            .login-card:hover,
+            .info-item:hover,
+            .badge:hover,
+            .professional-image:hover,
+            .cta-button:hover {
+                transition-duration: 0.2s;
+            }
+        }
+
+        /* === FORM VALIDATION STATES === */
+        .email-input.valid {
+            border-color: var(--color-brand-blue);
+            background-color: rgba(0, 115, 170, 0.02);
+        }
+
+        .email-input.invalid {
+            border-color: var(--color-dark-accent);
+            background-color: rgba(34, 34, 34, 0.02);
+        }
+
+        /* === PROFESSIONAL STATUS INDICATORS === */
+        .status-indicator {
+            font-size: var(--text-xs);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-weight: var(--weight-semibold);
+            display: inline-block;
+            margin-top: var(--space-sm);
+        }
+
+        .status-secure {
+            background: rgba(0, 115, 170, 0.1);
+            color: var(--color-brand-blue);
+        }
+
+        .status-time {
+            background: rgba(255, 157, 10, 0.1);
+            color: var(--color-brand-orange);
+        }
+    </style>
+<style>
+            @keyframes slideInDown {
+                from { transform: translateY(-100%); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            @keyframes slideOutUp {
+                from { transform: translateY(0); opacity: 1; }
+                to { transform: translateY(-100%); opacity: 0; }
+            }
+        </style><link href="https://cdn.userway.org/styles/2025-08-26-08-02-03/widget_base.css?v=1756195323562" type="text/css" rel="stylesheet"><style>
+            @keyframes slideInDown {
+                from { transform: translateY(-100%); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            @keyframes slideOutUp {
+                from { transform: translateY(0); opacity: 1; }
+                to { transform: translateY(-100%); opacity: 0; }
+            }
+        </style><style>
+            .current-page {
+                color: #ff9d0a !important;
+                font-weight: bold;
+                cursor: default;
+            }
+        </style><link href="https://cdn.userway.org/styles/2025-08-26-08-02-03/widget_base.css?v=1756195323562" type="text/css" rel="stylesheet"></head>
+<body class="rtl home wp-singular page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-34 wp-theme-oribsn has-banner" style="">
+    
+    <!-- Professional Exclusive Banner -->
+    <div class="uwy userway_p5" data-uw-feature-ignore="true" data-uw-rm-ignore="true" title="תפריט נגישות" style="background-color: transparent !important; overflow: initial !important;"><div class="userway_buttons_wrapper"><div class="ulsti hidden userway_dark" id="userwayLstIcon" aria-label="תפריט תרגומים" role="button" tabindex="0" aria-haspopup="dialog" data-uw-s19-ignore="" title="תפריט תרגומים" style="background: rgb(45, 104, 255) !important;"><span class="uiiw"></span><div class="ups"><img width="43" height="43" data-uw-rm-ignore="" class="si_w" aria-hidden="true" alt="Spinner: White decorative" src="https://cdn.userway.org/widgetapp/images/spin_wh.svg"></div><span class="usr lst-spacer"></span></div><div class="uai userway_dark" id="userwayAccessibilityIcon" aria-label="תפריט נגישות" role="button" tabindex="0" aria-haspopup="dialog" title="תפריט נגישות" style="background: rgb(45, 104, 255) !important;"><span class="uiiw"><img data-uw-rm-ignore="" class="ui_w" role="presentation" alt="" src="https://cdn.userway.org/widgetapp/images/body_wh.svg"></span><div class="ups"><img width="43" height="43" data-uw-rm-ignore="" class="si_w" aria-hidden="true" alt="Spinner: White decorative" src="https://cdn.userway.org/widgetapp/images/spin_wh.svg"></div><span class="usr"></span></div><div class="uwaw-dictionary-tooltip"></div></div><iframe class="uwif userway_p5" data-uw-ignore-translate="true" name="userway" title="UserWay תפריט נגישות" allow="clipboard-write" style="max-width: 100vw !important; visibility: visible !important; opacity: 1 !important; color-scheme: light !important;"></iframe></div><div class="uw-s10-bottom-ruler-guide"></div><div class="uw-s10-right-ruler-guide"></div><div class="uw-s10-left-ruler-guide"></div><div class="uw-s10-reading-guide"><div class="uw-s10-reading-guide__arrow"></div></div><div class="uw-s12-tooltip" aria-hidden="true"></div><div class="uwy userway_p5" data-uw-feature-ignore="true" data-uw-rm-ignore="true" title="תפריט נגישות" style="background-color: transparent !important; overflow: initial !important;"><div class="userway_buttons_wrapper"><div class="ulsti hidden userway_dark" id="userwayLstIcon" aria-label="תפריט תרגומים" role="button" tabindex="0" aria-haspopup="dialog" data-uw-s19-ignore="" title="תפריט תרגומים" style="background: rgb(45, 104, 255) !important;"><span class="uiiw"></span><div class="ups"><img width="43" height="43" data-uw-rm-ignore="" class="si_w" aria-hidden="true" alt="Spinner: White decorative" src="https://cdn.userway.org/widgetapp/images/spin_wh.svg"></div><span class="usr lst-spacer"></span></div><div class="uai userway_dark" id="userwayAccessibilityIcon" aria-label="תפריט נגישות" role="button" tabindex="0" aria-haspopup="dialog" title="תפריט נגישות" style="background: rgb(45, 104, 255) !important;"><span class="uiiw"><img data-uw-rm-ignore="" class="ui_w" role="presentation" alt="" src="https://cdn.userway.org/widgetapp/images/body_wh.svg"></span><div class="ups"><img width="43" height="43" data-uw-rm-ignore="" class="si_w" aria-hidden="true" alt="Spinner: White decorative" src="https://cdn.userway.org/widgetapp/images/spin_wh.svg"></div><span class="usr"></span></div><div class="uwaw-dictionary-tooltip"></div></div><iframe class="uwif userway_p5" data-uw-ignore-translate="true" name="userway" title="UserWay תפריט נגישות" allow="clipboard-write" style="max-width: 100vw !important; visibility: visible !important; opacity: 1 !important; color-scheme: light !important;"></iframe></div><div class="uw-s10-bottom-ruler-guide"></div><div class="uw-s10-right-ruler-guide"></div><div class="uw-s10-left-ruler-guide"></div><div class="uw-s10-reading-guide"><div class="uw-s10-reading-guide__arrow"></div></div><div class="uw-s12-tooltip" aria-hidden="true"></div><div class="exclusive-banner">
+        <div class="exclusive-banner-text">
+            <span class="exclusive-banner-icon"></span>
+            <span>פורטל למשקיעים כשירים בלבד</span>
+            <span class="exclusive-banner-icon"></span>
+        </div>
+    </div>
+    
+    <!-- Website Header -->
+    <header class="header">
+        <div class="head_in">
+            <div class="logo_wrap head_logo">
+                <a href="https://movne.co.il/">
+                    <img class="logo_black" src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne Global">
+                </a>
+            </div>
+            <div class="head_menu_wrap no_m">
+                <nav class="main_menu" id="main_menu">
+                    <ul class="frow">
+                        <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                        <li class="mitem mitem_44">
+                            <a href="https://movne.co.il/">בית</a>
+                        </li>
+                        <li class="mitem mitem_46 ">
+                            <a href="https://movne.co.il/products/">מוצרים מובנים</a>
+                        </li>
+                        <li class="mitem mitem_47 ">
+                            <a href="https://movne.co.il/about/">מי אנחנו?</a>
+                        </li>
+                        <li class="mitem mitem_45 ">
+                            <a href="https://movne.co.il/blog/">כתבות</a>
+                        </li>
+                        <li class="mitem mitem_48 ">
+                            <a href="https://movne.co.il/contact/">צרו קשר</a>
+                        </li>
+                        <li class="mitem mitem_910 current">
+                            <a href="#" onclick="return false;" class="current-page">פורטל למשקיעים כשירים</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bt_menu m_only"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+        <div class="head_sticky">
+            <div class="logo_wrap head_logo">
+                <a href="https://movne.co.il/">
+                    <img src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne Global">
+                </a>
+            </div>
+            <div class="head_menu_wrap no_m">
+                <nav class="main_menu" id="main_menu_s">
+                    <ul class="frow">
+                        <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                        <li class="mitem mitem_44 mitemmtoptc">
+                            <a href="https://movne.co.il/">בית</a>
+                        </li>
+                        <li class="mitem mitem_46 mitemmtoptc">
+                            <a href="https://movne.co.il/products/">מוצרים מובנים</a>
+                        </li>
+                        <li class="mitem mitem_47 mitemmtoptc">
+                            <a href="https://movne.co.il/about/">מי אנחנו?</a>
+                        </li>
+                        <li class="mitem mitem_45 mitemmtoptc">
+                            <a href="https://movne.co.il/blog/">כתבות</a>
+                        </li>
+                        <li class="mitem mitem_48 mitemmtoptc">
+                            <a href="https://movne.co.il/contact/">צרו קשר</a>
+                        </li>
+                        <li class="mitem mitem_910 mitemmtoptc current">
+                            <a href="#" onclick="return false;" class="current-page">פורטל למשקיעים כשירים</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bt_menu m_only"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+        <div class="head_menu_wrap m_only">
+            <div class="logo_wrap head_logo">
+                <a href="https://movne.co.il/">
+                    <img class="logo_black" src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne Global">
+                </a>
+            </div>
+            <nav class="main_menu" id="main_menu_s">
+                <ul class="frow">
+                    <li class="mitem mitem_44 mitemmtoptc">
+                        <a href="https://movne.co.il/">בית</a>
+                    </li>
+                    <li class="mitem mitem_46 mitemmtoptc">
+                        <a href="https://movne.co.il/products/">מוצרים מובנים</a>
+                    </li>
+                    <li class="mitem mitem_47 mitemmtoptc">
+                        <a href="https://movne.co.il/about/">מי אנחנו?</a>
+                    </li>
+                    <li class="mitem mitem_45 mitemmtoptc">
+                        <a href="https://movne.co.il/blog/">כתבות</a>
+                    </li>
+                    <li class="mitem mitem_48 mitemmtoptc">
+                        <a href="https://movne.co.il/contact/">צרו קשר</a>
+                    </li>
+                    <li class="mitem mitem_910 mitemmtoptc current">
+                        <a href="#" onclick="return false;" class="current-page">פורטל למשקיעים כשירים</a>
+                    </li>
+                    <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                </ul>
+            </nav>
+            <div class="bt_menu"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+    </header>
+
+    <!-- Professional Hero Section -->
+    <section class="portal-hero">
+        <div class="hero-content fade-in-up" style="opacity: 1;">
+            <h1>פורטל למשקיעים כשירים</h1>
+            <div class="subtitle">גישה מקצועית למוצרים מובנים ברמה מוסדית</div>
+            
+            <!-- Professional Login Options -->
+            <div class="login-options fade-in-up delay-1" style="opacity: 1;">
+                
+                <!-- Existing Qualified Investors -->
+                <div class="login-card">
+                    <div class="card-header">
+                        <h3>משקיעים רשומים</h3>
+                        <p>כבר עברתם את תהליך האימות והוכרתם כמשקיעים כשירים? היכנסו לפורטל עם כתובת האימייל שלכם</p>
+                    </div>
+                    
+                    <div class="card-action">
+                        <div class="email-login-form">
+                            <input type="email" id="existing-investor-email" class="email-input" placeholder="כתובת אימייל" required="" aria-label="כתובת אימייל למשקיע רשום">
+                            <button onclick="handleExistingInvestorLogin()" class="cta-button secondary" aria-describedby="login-description">
+                                כניסה לפורטל
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div id="login-description" class="status-indicator status-secure">
+                            אימות מאובטח ללא צורך בסיסמה
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New Investors -->
+                <div class="login-card">
+                    <div class="card-header">
+                        <h3>משקיעים חדשים</h3>
+                        <p>מילוי השאלון המקצועי לזיהוי משקיע כשיר על פי דרישות רשות ניירות ערך</p>
+                    </div>
+                    
+                    <div class="card-action">
+                        <div class="button-placeholder">
+                            <div class="spacer-element" style="height: 94px;"></div>
+                            <a href="https://movne.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%9e%d7%a9%d7%a7%d7%99%d7%a2-%d7%9b%d7%a9%d7%99%d7%a8-2/" class="cta-button" target="_blank" aria-describedby="qualification-description">
+                                התחלת תהליך הכשרה
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div id="qualification-description" class="status-indicator status-time">
+                            זמן מילוי משוער: 8-12 דקות
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="divider">
+                <span>פלטפורמה מאובטחת ומוסדרת</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Image Section -->
+    <section class="hero-image-section">
+        <div class="hero-image-container">
+            <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="משקיעים מקצועיים בישיבת עבודה" class="professional-image fade-in-up delay-2" loading="lazy">
+            <div class="qualification-badges fade-in-up delay-3">
+                <div class="badge">משקיעים כשירים</div>
+                <div class="badge">מוצרים מובנים</div>
+                <div class="badge">שיווק השקעות</div>
+                <div class="badge">רגולציה ישראלית</div>
+            </div>
+            <div class="image-caption fade-in-up delay-4">
+                סביבת השקעה מקצועית המותאמת לדרישות הרגולטור הישראלי
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="portal-content">
+        <div class="content-container">
+            <!-- Information Section -->
+            <div class="info-section fade-in-up">
+                <h2>מדריך למשקיע הכשיר</h2>
+                
+                <div class="info-content">
+                    <div class="info-item slide-in-left delay-1">
+                        <h3>קריטריונים להגדרת משקיע כשיר</h3>
+                        <p>על פי חוק החברות (תיקון 16), 2018 ותקנות הרשות לניירות ערך, משקיע כשיר הוא אדם העומד באחד מהקריטריונים: הכנסה שנתית של לפחות 2.5 מיליון שקל, נכסים נזילים בהיקף של לפחות 8 מיליון שקל, או ניסיון מקצועי מוכח בתחום השקעות פיננסיות.</p>
+                    </div>
+                    
+                    <div class="info-item slide-in-left delay-2">
+                        <h3>תהליך אימות זהות מתקדם</h3>
+                        <p>המערכת כוללת אימות דיגיטלי מאובטח של תעודת זהות, אישור פרטים אישיים ועמידה בקריטריוני הכשירות. התהליך מבוצע בהתאם לדרישות הרגולטור הישראלי ותוך הקפדה על הגנת פרטיות מירבית.</p>
+                    </div>
+                    
+                    <div class="info-item slide-in-left delay-3">
+                        <h3>אבטחת מידע ברמה בנקאית</h3>
+                        <p>כל המידע האישי והפיננסי נשמר במערכות מוצפנות ברמה בנקאית. אנו פועלים בהתאם להנחיות רשות ניירות ערך, חוק הגנת הפרטיות וסטנדרטים בינלאומיים לאבטחת מידע פיננסי.</p>
+                    </div>
+                    
+                    <div class="info-item slide-in-left delay-4">
+                        <h3>זמן השלמת התהליך</h3>
+                        <p>מילוי ההצהרה הדיגיטלית אורך כ-8-12 דקות בממוצע, כולל אימות תעודת זהות וחתימה דיגיטלית. המערכת מאפשרת שמירת התקדמות ואישור סטטוס הכשירות בזמן אמת.</p>
+                    </div>
+                </div>
+
+                <div class="cta-section fade-in-up delay-4">
+                    <p>מוכנים להתחיל?</p>
+                    <a href="https://movne.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%9e%d7%a9%d7%a7%d7%99%d7%a2-%d7%9b%d7%a9%d7%99%d7%a8-2/" class="cta-button" target="_blank">
+                        התחלת התהליך
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Footer -->
+    <footer class="footer">
+        <div class="ft_top">
+            <div class="wrap">
+                <div class="ft_top_in">
+                    <div class="ft_col ft_col_1">
+                        <nav class="ft_menu" id="ft_menu">
+                            <ul>
+                                <li class="ftmitem mitem_51 "><a href="https://movne.co.il/products/">מוצרים מובנים</a></li>
+                                <li class="ftmitem mitem_52 "><a href="https://movne.co.il/about/">מי אנחנו?</a></li>
+                                <li class="ftmitem mitem_50 "><a href="https://movne.co.il/blog/">כתבות</a></li>
+                                <li class="ftmitem mitem_53 "><a href="https://movne.co.il/contact/">צרו קשר</a></li>
+                                <li class="ftmitem mitem_897 "><a href="https://movne.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%9e%d7%a9%d7%a7%d7%99%d7%a2-%d7%9b%d7%a9%d7%99%d7%a8-2/">פורטל למשקיעים כשירים</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ft_col ft_col_2">
+                        <nav class="ft_menu" id="ft_menu">
+                            <ul>
+                                <li class="ftmitem mitem_667 "><a href="https://movne.co.il/privacy/">גילוי נאות</a></li>
+                                <li class="ftmitem mitem_64 "><a href="https://movne.co.il/accessibility/">הצהרת נגישות</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ft_col ft_col_3">
+                        <div class="ft_tx">המוצרים מובנים של מובנה גלובל מונפקים על ידי הגופים הפיננסיים האיתנים ביותר בעולם. מה שמספק ביטחון נוסף למחזיקים בהם. זה מאפשר פיזור רחב של הנכסים ולא מגביל את ההשקעה לבנקים מקומיים בלבד. האמינות והביטחון שמספקים הגופים... <br>
+המוצרים מובנים של מובנה גלובל מונפקים על ידי הגופים הפיננסיים האיתנים ביותר בעולם. מה שמספק ביטחון נוסף למחזיקים בהם.<br>
+למוצרים מובנים מגוון רחב של תשואות ותכונות שמאפשרות להתאים את ההשקעה בהם להעדפות האישיות של המשקיע.</div>
+                        <div class="more"><a href="javascript: void(0);">קראו עוד</a></div>
+                    </div>
+                    <div class="uparr"><a href="javascript: void(0);"></a></div>
+                </div>
+            </div>	
+        </div>
+        <div class="ft_bottom">
+            <div class="wrap">
+                <div class="ft_bottom_in">
+                    <div class="ft_col ft_col_1">
+                        <div class="ft_soc soc_items">
+                            <a class="linkedin" href="#" target="_blank" aria-label="LinkedIn"></a>
+                            <a class="instagram" href="#" target="_blank" aria-label="Instagram"></a>
+                            <a class="telegram" href="#" target="_blank" aria-label="Telegram"></a>
+                            <a class="tiktok" href="#" target="_blank" aria-label="TikTok"></a>
+                        </div>
+                    </div>
+                    <div class="ft_col ft_col_2">
+                        <div class="ft_email">
+                            <a class="email" href="mailto:info@movne.co.il" target="_blank">info@movne.co.il</a>
+                        </div>
+                    </div>
+                    <div class="ft_col ft_col_3 no_m">
+                        <div class="ft_rights">© כל הזכויות שמורות למובנה בע״מ</div>
+                    </div>
+                    <div class="ft_col ft_col_4 no_m">
+                        <div class="creds">
+                            <span>webdev</span>
+                            <a href="https://oribsn.dev" target="_blank">
+                                <span>oribsn</span>
+                                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/svg/oribsn.svg" alt="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה" title="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ft_logo">
+                        <img src="https://movne.co.il/wp-content/uploads/2024/09/ft_logo.svg" alt="Movne Global">
+                    </div>
+                    <div class="ft_rights m_only">© כל הזכויות שמורות למובנה בע״מ</div>
+                    <div class="creds_wrap m_only">
+                        <div class="creds">
+                            <span>webdev</span>
+                            <a href="https://oribsn.dev" target="_blank">
+                                <span>oribsn</span>
+                                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/svg/oribsn.svg" alt="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה" title="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Website Scripts -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0W0EEEJJ3M"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="vVuAj6w9Kj"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17" id="mediaelement-core-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.2.17" id="mediaelement-migrate-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=6.8.2" id="wp-mediaelement-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.17" id="mediaelement-vimeo-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/jquery.popupoverlay.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/modal_video/jquery-modal-video.min.js?v=3"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/jquery.paroller.min.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/zebra_pin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/gsap/SplitText.min.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/scripts.js?v=1758004795"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/animations.js?v=1758004795"></script>
+    <script src="https://cdn.userway.org/widgetapp/2025-08-26-08-02-03/widget_app_base_1756195323562.js" async="" id="a11yWidgetSrc" crossorigin="anonymous" integrity="sha256-QPrb2tX87EVFWCE3Fbl0tzkoVG93kt8h6BrdZHod66U="></script>
+    
+    <script>
+        // Professional Email Login System
+        function handleExistingInvestorLogin() {
+            const email = document.getElementById('existing-investor-email').value.trim();
+            
+            if (!email) {
+                showProfessionalMessage('אנא הזינו כתובת אימייל', 'warning');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showProfessionalMessage('אנא הזינו כתובת אימייל תקינה', 'error');
+                return;
+            }
+            
+            // Professional loading state
+            const button = document.querySelector('.cta-button.secondary');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<span class="loading"></span> מתחבר לפורטל...';
+            button.disabled = true;
+            button.classList.add('loading');
+            
+            // Check email in database - simulate database lookup
+            checkEmailInDatabase(email).then(exists => {
+                if (exists) {
+                    showProfessionalMessage('ברוך הבא! פותח את הפורטל עבורך...', 'success');
+                    setTimeout(() => {
+                        showLoggedInPortal(email);
+                    }, 1500);
+                } else {
+                    showProfessionalMessage('האימייל לא נמצא במערכת. אנא עבור תחילה את תהליך הכשרה', 'warning');
+                    setTimeout(() => {
+                        scrollToNewInvestorSection();
+                    }, 2000);
+                }
+                
+                // Reset button
+                button.innerHTML = originalText;
+                button.disabled = false;
+                button.classList.remove('loading');
+            });
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showProfessionalMessage(message, type = 'info') {
+            const messageEl = document.createElement('div');
+            messageEl.textContent = message;
+            
+            let bgColor = 'var(--color-brand-blue)';
+            if (type === 'error') bgColor = 'var(--color-dark-accent)';
+            if (type === 'warning') bgColor = 'var(--color-brand-orange)';
+            
+            messageEl.style.cssText = `
+                position: fixed;
+                top: var(--space-lg);
+                right: var(--space-lg);
+                background: ${bgColor};
+                color: var(--color-secondary);
+                padding: var(--space-md) var(--space-lg);
+                border-radius: var(--radius-md);
+                font-weight: var(--weight-semibold);
+                font-family: var(--font-primary);
+                font-size: var(--text-base);
+                z-index: 10000;
+                animation: slideInDown 0.3s ease;
+                box-shadow: var(--shadow-medium);
+                max-width: 320px;
+                text-align: center;
+            `;
+            
+            document.body.appendChild(messageEl);
+            
+            setTimeout(() => {
+                messageEl.style.animation = 'slideOutUp 0.3s ease';
+                setTimeout(() => messageEl.remove(), 300);
+            }, 4000);
+        }
+
+        // Professional Animation System
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    if (entry.target.classList.contains('fade-in-up')) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                    if (entry.target.classList.contains('slide-in-left')) {
+                        entry.target.classList.add('slide-in-left');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Professional Initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            document.querySelectorAll('.fade-in-up, .slide-in-left, .delay-1, .delay-2, .delay-3, .delay-4').forEach(item => {
+                observer.observe(item);
+            });
+
+            // Professional hover effects
+            document.querySelectorAll('.login-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            document.querySelectorAll('.info-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(-6px)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+
+            // Professional email input handling
+            const emailInput = document.getElementById('existing-investor-email');
+            if (emailInput) {
+                emailInput.addEventListener('focus', function() {
+                    this.style.borderColor = 'var(--color-brand-blue)';
+                    this.style.boxShadow = '0 0 0 3px rgba(0, 115, 170, 0.1)';
+                });
+                
+                emailInput.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.style.borderColor = 'var(--color-gray-light)';
+                        this.style.boxShadow = 'none';
+                        this.classList.remove('valid', 'invalid');
+                    }
+                });
+
+                emailInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        handleExistingInvestorLogin();
+                    }
+                });
+
+                // Professional real-time validation
+                emailInput.addEventListener('input', function() {
+                    const value = this.value.trim();
+                    if (value) {
+                        const isValid = isValidEmail(value);
+                        this.classList.toggle('valid', isValid);
+                        this.classList.toggle('invalid', !isValid);
+                        this.style.borderColor = isValid ? 'var(--color-brand-blue)' : 'var(--color-dark-accent)';
+                    } else {
+                        this.classList.remove('valid', 'invalid');
+                        this.style.borderColor = 'var(--color-gray-light)';
+                    }
+                });
+            }
+
+            // Professional smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Professional loading states for external links
+            document.querySelectorAll('a[target="_blank"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (this.classList.contains('cta-button') && !this.classList.contains('secondary')) {
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<span class="loading"></span> פותח...';
+                        this.classList.add('loading');
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.classList.remove('loading');
+                        }, 1500);
+                    }
+                });
+            });
+        });
+
+        // Professional CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInDown {
+                from { transform: translateY(-100%); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            @keyframes slideOutUp {
+                from { transform: translateY(0); opacity: 1; }
+                to { transform: translateY(-100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Database Integration Functions
+        async function checkEmailInDatabase(email) {
+            // Simulate database check - replace with actual database call
+            // For now, simulate some test emails as "registered"
+            const registeredEmails = [
+                'test@movne.co.il',
+                'demo@example.com', 
+                'investor@test.com'
+            ];
+            
+            // Simulate network delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Check if email exists (case insensitive)
+            return registeredEmails.some(registered => 
+                registered.toLowerCase() === email.toLowerCase()
+            );
+        }
+        
+        function showLoggedInPortal(email) {
+            // Hide login forms and show portal content
+            const heroSection = document.querySelector('.portal-hero');
+            
+            heroSection.innerHTML = `
+                <div class="hero-content fade-in-up">
+                    <h1>ברוך הבא לפורטל</h1>
+                    <div class="subtitle">משקיע רשום: ${email}</div>
+                    
+                    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 12px; max-width: 600px; margin: 20px auto;">
+                        <h3 style="color: #ff9d0a; margin-top: 0;">🎉 כניסה מוצלחת לפורטל!</h3>
+                        <p>שלום רב, אתה מחובר כמשקיע כשיר רשום.</p>
+                        
+                        <div style="text-align: center; margin-top: 20px;">
+                            <button onclick="location.reload()" class="cta-button secondary" style="margin: 10px;">
+                                חזרה לדף הראשי
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function scrollToNewInvestorSection() {
+            const newInvestorCard = document.querySelector('.login-card:last-child');
+            if (newInvestorCard) {
+                newInvestorCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Add highlight effect
+                newInvestorCard.style.boxShadow = '0 0 20px rgba(255, 157, 10, 0.3)';
+                setTimeout(() => {
+                    newInvestorCard.style.boxShadow = '';
+                }, 3000);
+            }
+        }
+        
+        // Questionnaire integration preserved - uses existing Google Sheets connection
+        
+        // Enhanced message system
+        function showProfessionalMessage(message, type = 'info') {
+            const messageEl = document.createElement('div');
+            messageEl.textContent = message;
+            
+            let bgColor = 'var(--color-brand-blue)';
+            if (type === 'error') bgColor = '#dc3545';
+            if (type === 'warning') bgColor = '#ffc107';
+            if (type === 'success') bgColor = '#28a745';
+            
+            messageEl.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${bgColor};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 10001;
+                font-weight: 600;
+                max-width: 400px;
+                animation: slideIn 0.3s ease-out;
+            `;
+            
+            document.body.appendChild(messageEl);
+            
+            setTimeout(() => {
+                messageEl.remove();
+            }, 4000);
+        }
+        
+        // Add current page styling
+        const currentPageStyle = document.createElement('style');
+        currentPageStyle.textContent = `
+            .current-page {
+                color: #ff9d0a !important;
+                font-weight: bold;
+                cursor: default;
+            }
+        `;
+        document.head.appendChild(currentPageStyle);
+    </script>
+
+<script src="https://cdn.userway.org/widgetapp/2025-08-26-08-02-03/widget_app_base_1756195323562.js" async="" id="a11yWidgetSrc" crossorigin="anonymous" integrity="sha256-QPrb2tX87EVFWCE3Fbl0tzkoVG93kt8h6BrdZHod66U="></script><script crossorigin="anonymous" integrity="sha256-TZYN3MCUKybmCNhNB92LLIEW1NEWKOxd7vJ3w7/OQgA=" src="https://cdn.userway.org/widgetapp/2025-08-26-08-02-03/remediation/remediation_1756195323562.js"></script><script crossorigin="anonymous" integrity="sha256-TZYN3MCUKybmCNhNB92LLIEW1NEWKOxd7vJ3w7/OQgA=" src="https://cdn.userway.org/widgetapp/2025-08-26-08-02-03/remediation/remediation_1756195323562.js"></script></body></html>

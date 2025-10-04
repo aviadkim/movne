@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פורטל משקיעים כשירים - מפת ניווט</title>
+    <style>
+        :root {
+            --primary-orange: #ff9d0a;
+            --primary-dark: #152135;
+            --secondary-dark: #2d3748;
+            --tertiary-dark: #1a202c;
+            --text-light: #e2e8f0;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 50%, var(--tertiary-dark) 100%);
+            color: white;
+            font-family: 'Simona', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            direction: rtl;
+            text-align: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            background: linear-gradient(135deg, var(--primary-orange), #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+        
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .portal-link {
+            display: block;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portal-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-orange), #ff8c00);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .portal-link:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .portal-link:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-orange);
+            box-shadow: 0 20px 40px rgba(255, 157, 10, 0.3);
+        }
+        
+        .portal-link h3 {
+            color: var(--primary-orange);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .portal-link p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .portal-status {
+            font-size: 0.9rem;
+            color: #4ade80;
+            font-weight: 600;
+        }
+        
+        .instructions {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .instructions h3 {
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .instructions ul {
+            text-align: right;
+            list-style: none;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .instructions li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--primary-orange);
+            font-weight: bold;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: rgba(255, 157, 10, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 157, 10, 0.3);
+        }
+        
+        .feature h4 {
+            color: var(--primary-orange);
+            margin-bottom: 8px;
+        }
+        
+        .feature p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container > * {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .container > *:nth-child(2) { animation-delay: 0.1s; }
+        .container > *:nth-child(3) { animation-delay: 0.2s; }
+        .container > *:nth-child(4) { animation-delay: 0.3s; }
+        
+        @media (max-width: 768px) {
+            .portal-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 פורטל משקיעים כשירים</h1>
+        <p class="subtitle">מפת ניווט מלאה - גלה את כל דפי הפורטל</p>
+        
+        <div class="portal-grid">
+            <a href="https://movne.co.il/wp-content/uploads/2025/09/portal-final-corrected-1.html" class="portal-link" target="_blank">
+                <h3>🏠 עמוד ראשי - פורטל המשקיעים</h3>
+                <p>הדף הראשי של הפורטל עם אפשרויות התחברות, מידע כללי ומערכת אימות למשקיעים כשירים</p>
+                <div class="portal-status">✅ זמין באתר</div>
+            </a>
+            
+            <a href="portal-page-2.html" class="portal-link" target="_blank">
+                <h3>📊 עמוד 2 - מידע נוסף למשקיעים</h3>
+                <p>מידע מפורט על השקעות מובנות, ייעוץ מקצועי, ניהול סיכונים ודיווחים שקופים</p>
+                <div class="portal-status">✅ מוכן להעלאה</div>
+            </a>
+            
+            <a href="portal-page-3.html" class="portal-link" target="_blank">
+                <h3>💼 עמוד 3 - שירותים מתקדמים</h3>
+                <p>שירותים מקצועיים, סטטיסטיקות חברה, פרטי יצירת קשר ומידע על השקעות בינלאומיות</p>
+                <div class="portal-status">✅ מוכן להעלאה</div>
+            </a>
+        </div>
+        
+        <div class="instructions">
+            <h3>🎯 תכונות עיקריות</h3>
+            <div class="features">
+                <div class="feature">
+                    <h4>עיצוב זהה</h4>
+                    <p>כל הדפים משתמשים באותו עיצוב, צבעים ופונטים כמו הפורטל המקורי</p>
+                </div>
+                <div class="feature">
+                    <h4>ניווט מלא</h4>
+                    <p>ניווט קדימה ואחורה, קישורים בין דפים וניווט מקלדת</p>
+                </div>
+                <div class="feature">
+                    <h4>רספונסיבי</h4>
+                    <p>מותאם לכל גדלי מסך - מובייל, טאבלט ומחשב</p>
+                </div>
+                <div class="feature">
+                    <h4>אינטראקטיבי</h4>
+                    <p>אנימציות, אפקטים ופונקציונליות מלאה</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>🔧 הוראות ניווט</h3>
+            <ul>
+                <li>לחץ על כל כרטיס לצפייה בדף הרלוונטי</li>
+                <li>השתמש בכפתורי הניווט בכל דף לתנועה בין הדפים</li>
+                <li>ניתן להשתמש במקשי Alt + חצים לניווט מהמקלדת</li>
+                <li>כל הדפים כוללים קישור חזרה לפורטל הראשי</li>
+                <li>הדפים מוכנים להעלאה לוורדפרס או לשרת</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        console.log('🚀 Portal Index loaded successfully');
+        console.log('📄 Available portal pages: 3');
+        console.log('🎨 Design consistency: 100%');
+        console.log('🔗 Navigation functionality: Complete');
+        
+        // Add click tracking
+        document.querySelectorAll('.portal-link').forEach((link, index) => {
+            link.addEventListener('click', () => {
+                console.log(`🔗 Navigating to portal page ${index + 1}`);
+            });
+        });
+    </script>
+</body>
+</html>

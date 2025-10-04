@@ -1,0 +1,58 @@
+{
+  "preparation": {
+    "title": "Before Starting Integration",
+    "steps": [
+      "Ensure you have WordPress admin access credentials",
+      "Have portal files ready for copy-paste",
+      "Prepare to wait for uPress security check",
+      "Have backup plan ready (FTP access if needed)"
+    ]
+  },
+  "pages": [
+    {
+      "step": 1,
+      "originalFile": "portal-index.html",
+      "wordpressTitle": "פורטל משקיעים כשירים - מפת ניווט",
+      "slug": "--------------------------------",
+      "instructions": [
+        "Open WordPress Admin > Pages > Add New",
+        "Set title: \"פורטל משקיעים כשירים - מפת ניווט\"",
+        "Switch to HTML/Text editor mode",
+        "Copy content from: wordpress-ready-portal-index.html",
+        "Paste into WordPress editor",
+        "Preview and publish page",
+        "Note the page URL for navigation setup"
+      ]
+    },
+    {
+      "step": 2,
+      "originalFile": "portal-page-2-EXACT.html",
+      "wordpressTitle": "פורטל למשקיעים כשירים - עמוד 2 - Movne",
+      "slug": "-----------------------------2---movne",
+      "instructions": [
+        "Open WordPress Admin > Pages > Add New",
+        "Set title: \"פורטל למשקיעים כשירים - עמוד 2 - Movne\"",
+        "Switch to HTML/Text editor mode",
+        "Copy content from: wordpress-ready-portal-page-2-EXACT.html",
+        "Paste into WordPress editor",
+        "Preview and publish page",
+        "Note the page URL for navigation setup"
+      ]
+    },
+    {
+      "step": 3,
+      "originalFile": "portal-page-3-EXACT.html",
+      "wordpressTitle": "פורטל למשקיעים כשירים - עמוד 3 - Movne",
+      "slug": "-----------------------------3---movne",
+      "instructions": [
+        "Open WordPress Admin > Pages > Add New",
+        "Set title: \"פורטל למשקיעים כשירים - עמוד 3 - Movne\"",
+        "Switch to HTML/Text editor mode",
+        "Copy content from: wordpress-ready-portal-page-3-EXACT.html",
+        "Paste into WordPress editor",
+        "Preview and publish page",
+        "Note the page URL for navigation setup"
+      ]
+    }
+  ]
+}

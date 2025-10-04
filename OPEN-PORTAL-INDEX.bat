@@ -1,0 +1,3 @@
+@echo off
+echo Opening Portal Index...
+start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" "file:///C:/Users/Aviad/Desktop/web-movne/portal-index.html"

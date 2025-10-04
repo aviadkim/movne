@@ -1,0 +1,81 @@
+{
+    "name": "Movne WordPress Portal Development",
+    "description": "WordPress portal development workspace for Movne.co.il",
+    "folders": [
+        {
+            "name": "Portal Files",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "wordpress.dev": {
+            "siteUrl": "https://movne.co.il",
+            "adminUrl": "https://movne.co.il/wp-admin/",
+            "credentials": {
+                "username": "aviad@kimfo-fs.com",
+                "note": "Password stored separately for security"
+            },
+            "theme": "oribsn",
+            "language": "he_IL"
+        },
+        "files.associations": {
+            "*.html": "html",
+            "portal-*.html": "html"
+        },
+        "emmet.includeLanguages": {
+            "html": "html"
+        },
+        "html.format.wrapLineLength": 120,
+        "editor.wordWrap": "on",
+        "editor.formatOnSave": true
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.vscode-json",
+            "bradlc.vscode-tailwindcss",
+            "formulahendry.auto-rename-tag",
+            "christian-kohler.path-intellisense",
+            "ms-vscode.hexeditor"
+        ]
+    },
+    "tasks": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "Open WordPress Admin",
+                "type": "shell",
+                "command": "start",
+                "args": ["", "https://movne.co.il/wp-admin/"],
+                "group": "build",
+                "presentation": {
+                    "echo": true,
+                    "reveal": "silent",
+                    "focus": false,
+                    "panel": "shared"
+                },
+                "problemMatcher": []
+            },
+            {
+                "label": "Preview Portal Page 2",
+                "type": "shell",
+                "command": "start",
+                "args": ["", "portal-page-2-EXACT.html"],
+                "group": "build"
+            },
+            {
+                "label": "Preview Portal Page 3",
+                "type": "shell",
+                "command": "start",
+                "args": ["", "portal-page-3-EXACT.html"],
+                "group": "build"
+            },
+            {
+                "label": "Test Movne Website",
+                "type": "shell",
+                "command": "start",
+                "args": ["", "https://movne.co.il"],
+                "group": "test"
+            }
+        ]
+    }
+}

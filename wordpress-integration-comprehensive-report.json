@@ -1,0 +1,102 @@
+{
+  "timestamp": "2025-09-19T14:05:30.047Z",
+  "summary": "WordPress admin protected by uPress security system",
+  "securityBypass": false,
+  "siteAnalysis": {},
+  "portalFiles": [
+    {
+      "name": "portal-index.html",
+      "size": 9619,
+      "modified": "2025-09-19T08:30:44.169Z",
+      "exists": true
+    },
+    {
+      "name": "portal-page-2-EXACT.html",
+      "size": 41967,
+      "modified": "2025-09-19T13:34:38.640Z",
+      "exists": true
+    },
+    {
+      "name": "portal-page-3-EXACT.html",
+      "size": 43856,
+      "modified": "2025-09-19T13:26:31.496Z",
+      "exists": true
+    },
+    {
+      "name": "portal-page-2-COMPLETE.html",
+      "size": 27868,
+      "modified": "2025-09-19T09:40:14.289Z",
+      "exists": true
+    },
+    {
+      "name": "portal-page-3-COMPLETE.html",
+      "size": 30200,
+      "modified": "2025-09-19T09:25:28.463Z",
+      "exists": true
+    }
+  ],
+  "recommendations": [
+    {
+      "method": "Manual WordPress Admin Access",
+      "steps": [
+        "Open browser manually and navigate to https://movne.co.il/wp-admin/",
+        "Wait for uPress security check to complete (may take 1-2 minutes)",
+        "Login with credentials: aviad@kimfo-fs.com / Kimfo1982",
+        "Navigate to Pages > Add New to create portal pages",
+        "Copy-paste portal HTML content into WordPress pages"
+      ],
+      "priority": "High",
+      "difficulty": "Easy"
+    },
+    {
+      "method": "FTP/cPanel File Upload",
+      "steps": [
+        "Access website hosting control panel or FTP",
+        "Upload portal HTML files to /wp-content/uploads/ directory",
+        "Create custom pages in WordPress that link to uploaded files",
+        "Update navigation menu to include portal links"
+      ],
+      "priority": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "method": "WordPress Page Templates",
+      "steps": [
+        "Access WordPress admin manually",
+        "Go to Pages > Add New",
+        "Create new pages: \"פורטל משקיעים כשירים\", \"עמוד 2\", \"עמוד 3\"",
+        "Use Custom HTML blocks to insert portal content",
+        "Set up proper internal linking between pages"
+      ],
+      "priority": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "method": "Theme Customization",
+      "steps": [
+        "Access Appearance > Theme Editor",
+        "Create custom page templates (page-portal.php)",
+        "Integrate portal HTML into theme structure",
+        "Add portal navigation to theme menu"
+      ],
+      "priority": "Low",
+      "difficulty": "High"
+    },
+    {
+      "method": "Plugin-Based Solution",
+      "steps": [
+        "Install a custom page builder plugin (Elementor, etc.)",
+        "Create portal pages using visual builder",
+        "Recreate portal design using plugin elements",
+        "Set up navigation and linking"
+      ],
+      "priority": "Medium",
+      "difficulty": "Medium"
+    }
+  ],
+  "credentials": {
+    "url": "https://movne.co.il/wp-admin/",
+    "username": "aviad@kimfo-fs.com",
+    "note": "Password provided separately for security"
+  }
+}

@@ -1,0 +1,17 @@
+# WordPress CLI Commands for Portal Page Creation
+# Run these commands manually in the server terminal
+
+# 1. Test connection
+wp option get home --url=https://movne.co.il
+
+# 2. Create portal page 2
+wp post create --post_type=page --post_title="פורטל משקיעים - עמוד 2" --post_name="portal-page-2" --post_status=publish --url=https://movne.co.il
+
+# 3. Update page content (get page ID from step 2)
+wp post update [PAGE_ID] --post_content="$(cat portal-content-temp.html)" --url=https://movne.co.il
+
+# 4. List pages to verify
+wp post list --post_type=page --format=table --url=https://movne.co.il
+
+# 5. Get page permalink
+wp post get [PAGE_ID] --field=url --url=https://movne.co.il

@@ -1,0 +1,23 @@
+{
+  "fontFamilies": [
+    "\"Times New Roman\"",
+    "Simona, sans-serif"
+  ],
+  "fontSizes": [
+    "16px",
+    "17px",
+    "18px",
+    "52px",
+    "24px",
+    "11px",
+    "13px",
+    "33px",
+    "20px",
+    "14px"
+  ],
+  "fontWeights": [
+    "400",
+    "600",
+    "700"
+  ]
+}

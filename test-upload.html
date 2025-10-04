@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="wp-theme-oribsn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פורטל השקעות מקצועי - Movne Global</title>
+
+    <!-- Original Website Stylesheets -->
+    <link rel="stylesheet" href="https://movne.co.il/wp-includes/css/dist/block-library/style-rtl.min.css?ver=6.8.2">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/rtl.css">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick.css">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/style.css?v=1758004795">
+
+    <style>
+        :root {
+            --primary-dark: #152135;
+            --primary-accent: #ff9d0a;
+            --text-dark: #222222;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --border-light: rgba(21, 33, 53, 0.1);
+        }
+
+        /* === PROFESSIONAL TOP BANNER === */
+        .exclusive-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #34394d 50%, var(--primary-dark) 100%);
+            color: #ffffff;
+            padding: 12px 20px;
+            text-align: center;
+            z-index: 10000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Simona', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--primary-accent);
+        }
+
+        .exclusive-banner-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        body.has-banner {
+            padding-top: 46px;
+        }
+
+        body.has-banner .header {
+            top: 46px;
+        }
+
+        /* === PORTAL DASHBOARD LAYOUT === */
+        .portal-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .portal-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #34394d 100%);
+            color: #ffffff;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 24px rgba(21, 33, 53, 0.15);
+        }
+
+        .portal-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .portal-header .subtitle {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* === CLIENT AREA SECTION === */
+        .client-dashboard {
+            background: linear-gradient(135deg, #ffffff 0%, var(--bg-light) 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-light);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .dashboard-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(21, 33, 53, 0.12);
+            border-color: var(--primary-accent);
+        }
+
+        .dashboard-card .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .dashboard-card .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .dashboard-card .metric-change {
+            font-size: 0.875rem;
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        .dashboard-card .metric-change.negative {
+            color: #dc3545;
+        }
+
+        /* === PRODUCT CATALOG SECTION === */
+        .product-catalog {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-accent);
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border-light);
+            background: #ffffff;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-accent);
+            color: #ffffff;
+            border-color: var(--primary-accent);
+        }
+
+        /* === PRODUCT CARDS === */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(21, 33, 53, 0.16);
+        }
+
+        .product-header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #34394d 100%);
+            color: #ffffff;
+            padding: 1.5rem;
+        }
+
+        .product-type {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-underlying {
+            font-size: 0.875rem;
+            opacity: 0.85;
+        }
+
+        .product-body {
+            padding: 1.5rem;
+        }
+
+        .product-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+
+        .metric-title {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .metric-number.highlight {
+            color: var(--primary-accent);
+        }
+
+        .product-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .product-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-features li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .feature-value {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #e88c00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(255, 157, 10, 0.3);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: var(--primary-dark);
+            border: 2px solid var(--primary-dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-dark);
+            color: #ffffff;
+        }
+
+        /* === CLIENT PRIVATE SECTION === */
+        .client-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-accent);
+        }
+
+        .client-section h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .document-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .document-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #ffffff;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .document-item:hover {
+            border-color: var(--primary-accent);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .document-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .document-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .document-details h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .document-details p {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .download-btn {
+            padding: 0.5rem 1rem;
+            background: var(--primary-accent);
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #e88c00;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .portal-container {
+                padding: 1rem;
+            }
+
+            .portal-header {
+                padding: 2rem 1.5rem;
+            }
+
+            .portal-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .filter-buttons {
+                width: 100%;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+        }
+
+        /* === BOTTOM NAVIGATION === */
+        .portal-navigation {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-light);
+            margin-top: 3rem;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .nav-link {
+            padding: 1rem 1.5rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--primary-accent);
+            color: #ffffff;
+            border-color: var(--primary-accent);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: var(--primary-dark);
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="has-banner">
+    <!-- Professional Banner -->
+    <div class="exclusive-banner">
+        <div class="exclusive-banner-text">
+            פורטל למשקיעים כשירים בלבד - Qualified Investors Only
+        </div>
+    </div>
+
+    <!-- Original Movne Header -->
+    <header class="header">
+        <div class="wrap">
+            <a href="https://movne.co.il/" class="logo">
+                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/logo.svg" alt="Movne Global">
+            </a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#meet">בואו נדבר!</a></li>
+                    <li><a href="https://movne.co.il/">בית</a></li>
+                    <li><a href="https://movne.co.il/products/">מוצרים מובנים</a></li>
+                    <li><a href="https://movne.co.il/about/">מי אנחנו?</a></li>
+                    <li><a href="https://movne.co.il/blog/">כתבות</a></li>
+                    <li><a href="https://movne.co.il/contact/">צרו קשר</a></li>
+                    <li><a href="#" class="active">פורטל למשקיעים כשירים</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Portal Content -->
+    <div class="portal-container">
+        <!-- Portal Header -->
+        <div class="portal-header">
+            <h1>פורטל השקעות מקצועי</h1>
+            <p class="subtitle">מוצרים מובנים, ניהול פורטפוליו ופתרונות השקעה מותאמים אישית</p>
+        </div>
+
+        <!-- Client Dashboard -->
+        <div class="client-dashboard">
+            <h2>סקירה כללית</h2>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="metric-label">סך השקעות</div>
+                    <div class="metric-value">₪2,450,000</div>
+                    <div class="metric-change">+8.5% השנה</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="metric-label">תשואה שנתית</div>
+                    <div class="metric-value">12.3%</div>
+                    <div class="metric-change">+2.1% לעומת S&P 500</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="metric-label">מוצרים פעילים</div>
+                    <div class="metric-value">7</div>
+                    <div class="metric-change">3 ממתינים לאישור</div>
+                </div>
+                <div class="dashboard-card">
+                    <div class="metric-label">פיזור סיכון</div>
+                    <div class="metric-value">מאוזן</div>
+                    <div class="metric-change">40% הגנה | 60% צמיחה</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Catalog -->
+        <div class="product-catalog">
+            <div class="section-header">
+                <h2>קטלוג מוצרים</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">הכל</button>
+                    <button class="filter-btn">הגנת הון</button>
+                    <button class="filter-btn">צמיחה</button>
+                    <button class="filter-btn">הכנסה קבועה</button>
+                    <button class="filter-btn">אלטרנטיבי</button>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1: S&P 500 Protected -->
+                <div class="product-card" data-category="protection">
+                    <div class="product-header">
+                        <div class="product-type">מוצר מובנה - הגנת הון</div>
+                        <h3 class="product-name">S&P 500 Protected Growth</h3>
+                        <p class="product-underlying">מדד S&P 500 | 100% הגנת הון</p>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-metrics">
+                            <div class="metric">
+                                <div class="metric-title">תשואה פוטנציאלית</div>
+                                <div class="metric-number highlight">8-12%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-title">תקופת השקעה</div>
+                                <div class="metric-number">36 חודשים</div>
+                            </div>
+                        </div>
+                        <ul class="product-features">
+                            <li>
+                                <span class="feature-label">השקעה מינימלית</span>
+                                <span class="feature-value">$50,000</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">רמת סיכון</span>
+                                <span class="feature-value">נמוכה-בינונית</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">תשלום ריבית</span>
+                                <span class="feature-value">בפדיון</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">מנפיק</span>
+                                <span class="feature-value">Goldman Sachs</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">דירוג אשראי</span>
+                                <span class="feature-value">A+ (S&P)</span>
+                            </li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary" onclick="openProductDetails('SP500-PRO')">פרטים מלאים</button>
+                            <button class="btn btn-secondary" onclick="scheduleConsultation()">קבע פגישה</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: NASDAQ Growth -->
+                <div class="product-card" data-category="growth">
+                    <div class="product-header">
+                        <div class="product-type">מוצר מובנה - צמיחה</div>
+                        <h3 class="product-name">NASDAQ-100 Enhanced Return</h3>
+                        <p class="product-underlying">מדד NASDAQ-100 | 90% הגנה</p>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-metrics">
+                            <div class="metric">
+                                <div class="metric-title">תשואה פוטנציאלית</div>
+                                <div class="metric-number highlight">15-20%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-title">תקופת השקעה</div>
+                                <div class="metric-number">24 חודשים</div>
+                            </div>
+                        </div>
+                        <ul class="product-features">
+                            <li>
+                                <span class="feature-label">השקעה מינימלית</span>
+                                <span class="feature-value">$75,000</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">רמת סיכון</span>
+                                <span class="feature-value">בינונית</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">תשלום ריבית</span>
+                                <span class="feature-value">רבעוני</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">מנפיק</span>
+                                <span class="feature-value">Morgan Stanley</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">דירוג אשראי</span>
+                                <span class="feature-value">A (Moody's)</span>
+                            </li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary" onclick="openProductDetails('NASDAQ-ENH')">פרטים מלאים</button>
+                            <button class="btn btn-secondary" onclick="scheduleConsultation()">קבע פגישה</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Multi-Asset -->
+                <div class="product-card" data-category="balanced">
+                    <div class="product-header">
+                        <div class="product-type">מוצר מובנה - מאוזן</div>
+                        <h3 class="product-name">Multi-Asset Balanced Portfolio</h3>
+                        <p class="product-underlying">סל נכסים מגוון | הגנה חלקית</p>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-metrics">
+                            <div class="metric">
+                                <div class="metric-title">תשואה פוטנציאלית</div>
+                                <div class="metric-number highlight">10-14%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-title">תקופת השקעה</div>
+                                <div class="metric-number">30 חודשים</div>
+                            </div>
+                        </div>
+                        <ul class="product-features">
+                            <li>
+                                <span class="feature-label">השקעה מינימלית</span>
+                                <span class="feature-value">$100,000</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">רמת סיכון</span>
+                                <span class="feature-value">בינונית</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">תשלום ריבית</span>
+                                <span class="feature-value">חצי שנתי</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">מנפיק</span>
+                                <span class="feature-value">UBS</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">דירוג אשראי</span>
+                                <span class="feature-value">AA- (Fitch)</span>
+                            </li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary" onclick="openProductDetails('MULTI-BAL')">פרטים מלאים</button>
+                            <button class="btn btn-secondary" onclick="scheduleConsultation()">קבע פגישה</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Gold Linked -->
+                <div class="product-card" data-category="alternative">
+                    <div class="product-header">
+                        <div class="product-type">מוצר מובנה - אלטרנטיבי</div>
+                        <h3 class="product-name">Gold & Commodities Diversified</h3>
+                        <p class="product-underlying">זהב + סחורות | הגנה מאינפלציה</p>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-metrics">
+                            <div class="metric">
+                                <div class="metric-title">תשואה פוטנציאלית</div>
+                                <div class="metric-number highlight">9-13%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-title">תקופת השקעה</div>
+                                <div class="metric-number">18 חודשים</div>
+                            </div>
+                        </div>
+                        <ul class="product-features">
+                            <li>
+                                <span class="feature-label">השקעה מינימלית</span>
+                                <span class="feature-value">$60,000</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">רמת סיכון</span>
+                                <span class="feature-value">בינונית-גבוהה</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">תשלום ריבית</span>
+                                <span class="feature-value">בפדיון</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">מנפיק</span>
+                                <span class="feature-value">BNP Paribas</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">דירוג אשראי</span>
+                                <span class="feature-value">A+ (S&P)</span>
+                            </li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary" onclick="openProductDetails('GOLD-COM')">פרטים מלאים</button>
+                            <button class="btn btn-secondary" onclick="scheduleConsultation()">קבע פגישה</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Tech Innovation -->
+                <div class="product-card" data-category="growth">
+                    <div class="product-header">
+                        <div class="product-type">מוצר מובנה - צמיחה</div>
+                        <h3 class="product-name">Tech Innovation Leaders</h3>
+                        <p class="product-underlying">מניות טכנולוגיה מובילות</p>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-metrics">
+                            <div class="metric">
+                                <div class="metric-title">תשואה פוטנציאלית</div>
+                                <div class="metric-number highlight">18-25%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-title">תקופת השקעה</div>
+                                <div class="metric-number">48 חודשים</div>
+                            </div>
+                        </div>
+                        <ul class="product-features">
+                            <li>
+                                <span class="feature-label">השקעה מינימלית</span>
+                                <span class="feature-value">$150,000</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">רמת סיכון</span>
+                                <span class="feature-value">גבוהה</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">תשלום ריבית</span>
+                                <span class="feature-value">שנתי</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">מנפיק</span>
+                                <span class="feature-value">JPMorgan Chase</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">דירוג אשראי</span>
+                                <span class="feature-value">AA- (S&P)</span>
+                            </li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary" onclick="openProductDetails('TECH-INN')">פרטים מלאים</button>
+                            <button class="btn btn-secondary" onclick="scheduleConsultation()">קבע פגישה</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6: ESG Focused -->
+                <div class="product-card" data-category="balanced">
+                    <div class="product-header">
+                        <div class="product-type">מוצר מובנה - ESG</div>
+                        <h3 class="product-name">Sustainable Investment Portfolio</h3>
+                        <p class="product-underlying">השקעות אחראיות | ESG מאומת</p>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-metrics">
+                            <div class="metric">
+                                <div class="metric-title">תשואה פוטנציאלית</div>
+                                <div class="metric-number highlight">11-15%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-title">תקופת השקעה</div>
+                                <div class="metric-number">36 חודשים</div>
+                            </div>
+                        </div>
+                        <ul class="product-features">
+                            <li>
+                                <span class="feature-label">השקעה מינימלית</span>
+                                <span class="feature-value">$80,000</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">רמת סיכון</span>
+                                <span class="feature-value">בינונית</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">תשלום ריבית</span>
+                                <span class="feature-value">רבעוני</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">מנפיק</span>
+                                <span class="feature-value">Credit Suisse</span>
+                            </li>
+                            <li>
+                                <span class="feature-label">דירוג אשראי</span>
+                                <span class="feature-value">A (Fitch)</span>
+                            </li>
+                        </ul>
+                        <div class="product-actions">
+                            <button class="btn btn-primary" onclick="openProductDetails('ESG-SUS')">פרטים מלאים</button>
+                            <button class="btn btn-secondary" onclick="scheduleConsultation()">קבע פגישה</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Private Section -->
+        <div class="client-section">
+            <h3>האזור האישי שלך</h3>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">מסמכים, דוחות ומידע ייעודי</p>
+            <ul class="document-list">
+                <li class="document-item">
+                    <div class="document-info">
+                        <div class="document-icon">📄</div>
+                        <div class="document-details">
+                            <h4>דוח ביצועים רבעוני - Q4 2024</h4>
+                            <p>עודכן לאחרונה: 15 ינואר 2025</p>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="downloadDocument('Q4-2024')">הורדה</button>
+                </li>
+                <li class="document-item">
+                    <div class="document-info">
+                        <div class="document-icon">📊</div>
+                        <div class="document-details">
+                            <h4>סיכום פעילות 2024</h4>
+                            <p>דוח שנתי מפורט עם ניתוח השקעות</p>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="downloadDocument('ANNUAL-2024')">הורדה</button>
+                </li>
+                <li class="document-item">
+                    <div class="document-info">
+                        <div class="document-icon">📋</div>
+                        <div class="document-details">
+                            <h4>אישור רווח הון לצורכי מס</h4>
+                            <p>טופס 867 - שנת מס 2024</p>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="downloadDocument('TAX-867')">הורדה</button>
+                </li>
+                <li class="document-item">
+                    <div class="document-info">
+                        <div class="document-icon">💼</div>
+                        <div class="document-details">
+                            <h4>הסכמי השקעה פעילים</h4>
+                            <p>7 מוצרים פעילים | 3 ממתינים</p>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="downloadDocument('AGREEMENTS')">צפייה</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Portal Navigation -->
+        <div class="portal-navigation">
+            <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary-dark);">ניווט בפורטל</h3>
+            <div class="nav-grid">
+                <a href="https://movne.co.il/portal/" class="nav-link">← דף הבית</a>
+                <a href="#" class="nav-link active">קטלוג מוצרים</a>
+                <a href="https://movne.co.il/portal/services/" class="nav-link">שירותי ייעוץ →</a>
+                <a href="https://movne.co.il/contact/" class="nav-link">צור קשר</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Original Movne Footer -->
+    <footer class="footer">
+        <div class="wrap">
+            <nav class="footer_nav">
+                <ul>
+                    <li><a href="https://movne.co.il/products/">מוצרים מובנים</a></li>
+                    <li><a href="https://movne.co.il/about/">מי אנחנו?</a></li>
+                    <li><a href="https://movne.co.il/blog/">כתבות</a></li>
+                    <li><a href="https://movne.co.il/contact/">צרו קשר</a></li>
+                    <li><a href="#">פורטל למשקיעים כשירים</a></li>
+                </ul>
+            </nav>
+            <nav class="footer_nav">
+                <ul>
+                    <li><a href="https://movne.co.il/privacy/">גילוי נאות</a></li>
+                    <li><a href="https://movne.co.il/accessibility/">הצהרת נגישות</a></li>
+                </ul>
+            </nav>
+            <div class="footer_disclaimer">
+                <p>המוצרים מובנים של מובנה גלובל מונפקים על ידי הגופים הפיננסיים האיתנים ביותר בעולם. מה שמספק ביטחון נוסף למחזיקים בהם.</p>
+                <p>למוצרים מובנים מגוון רחב של תשואות ותכונות שמאפשרות להתאים את ההשקעה בהם להעדפות האישיות של המשקיע.</p>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="wrap">
+                <div class="social_links">
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">Instagram</a>
+                    <a href="#" target="_blank">Telegram</a>
+                    <a href="#" target="_blank">TikTok</a>
+                </div>
+                <a href="mailto:info@movne.co.il" class="footer_email">info@movne.co.il</a>
+                <p class="copyright">© כל הזכויות שמורות למובנה בע״מ</p>
+                <div class="webdev">
+                    <span>webdev</span>
+                    <a href="https://oribsn.dev" target="_blank" title="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                        <span>oribsn</span>
+                        <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/oribsn.svg" alt="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick.min.js"></script>
+    <script src="https://movne.co.il/wp-content/themes/oribsn/assets/js/main.js"></script>
+
+    <script>
+        // Product filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.textContent.trim();
+                const cards = document.querySelectorAll('.product-card');
+
+                cards.forEach(card => {
+                    if (filter === 'הכל') {
+                        card.style.display = 'block';
+                    } else {
+                        // Add filtering logic based on categories
+                        card.style.display = 'block';
+                    }
+                });
+            });
+        });
+
+        // Open product details
+        function openProductDetails(productId) {
+            alert('פותח פרטי מוצר: ' + productId + '\n\nכאן יפתח מודל עם מידע מפורט על המוצר, כולל:\n• תנאים מלאים\n• דוגמאות תשואה\n• מסמכים משפטיים\n• היסטוריית ביצועים');
+        }
+
+        // Schedule consultation
+        function scheduleConsultation() {
+            alert('מעביר לעמוד תיאום פגישה...\n\nכאן ניתן לשלב קישור ל-Calendly או מערכת תיאום פגישות אחרת.');
+        }
+
+        // Download document
+        function downloadDocument(docId) {
+            alert('מוריד מסמך: ' + docId + '\n\nבסביבה ייצורית, כאן יתבצע הורדה מאובטחת של המסמך.');
+        }
+
+        console.log('Professional Investment Portal - Loaded Successfully');
+        console.log('Movne Global - Qualified Investors Portal');
+    </script>
+</body>
+</html>

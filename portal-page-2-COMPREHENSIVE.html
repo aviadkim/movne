@@ -1,0 +1,2292 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="wp-theme-oribsn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פורטל למשקיעים כשירים - Movne</title>
+
+    <!-- Original Website Stylesheets -->
+    <link rel="stylesheet" id="wp-block-library-rtl-css" href="https://movne.co.il/wp-includes/css/dist/block-library/style-rtl.min.css?ver=6.8.2" type="text/css" media="all">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/rtl.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick.css">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/modal_video/modal-video.min.css">
+    <link rel="stylesheet" type="text/css" href="https://movne.co.il/wp-content/themes/oribsn/style.css?v=1758004795">
+    <link rel="stylesheet" id="mediaelement-css" href="https://movne.co.il/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-mediaelement-css" href="https://movne.co.il/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.8.2" type="text/css" media="all">
+
+    <style>
+        /* === PROFESSIONAL TOP BANNER === */
+        .exclusive-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #152135 0%, #34394d 50%, #152135 100%);
+            color: #ffffff;
+            padding: 12px 20px;
+            text-align: center;
+            z-index: 10000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Simona', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #ff9d0a;
+        }
+
+        .exclusive-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 157, 10, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .exclusive-banner-text {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exclusive-banner-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #ff9d0a;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .exclusive-banner-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        /* Adjust body and header for banner space */
+        body.has-banner {
+            padding-top: 50px;
+        }
+
+        body.has-banner .header {
+            top: 50px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .exclusive-banner {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+
+            body.has-banner {
+                padding-top: 44px;
+            }
+
+            body.has-banner .header {
+                top: 44px;
+            }
+
+            .exclusive-banner-icon {
+                width: 16px;
+                height: 16px;
+            }
+
+            .exclusive-banner-icon::after {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        /* === MOVNE DESIGN SYSTEM === */
+        :root {
+            /* Brand Colors */
+            --color-primary: #000000;
+            --color-secondary: #ffffff;
+            --color-brand-orange: #ff9d0a;
+            --color-brand-blue: #0073aa;
+            --color-dark-primary: #152135;
+            --color-dark-secondary: #34394d;
+            --color-dark-accent: #222222;
+            --color-gray-light: #eeeeee;
+            --color-gray-medium: #abb8c3;
+
+            /* Typography */
+            --font-primary: Simona, sans-serif;
+            --font-secondary: Arial, sans-serif;
+
+            /* Font sizes */
+            --text-xs: 11px;
+            --text-sm: 13px;
+            --text-base: 16px;
+            --text-lg: 18px;
+            --text-xl: 20px;
+            --text-2xl: 24px;
+            --text-3xl: 27px;
+            --text-4xl: 33px;
+            --text-5xl: 45px;
+
+            /* Font weights */
+            --weight-normal: 400;
+            --weight-semibold: 600;
+            --weight-bold: 700;
+
+            /* Spacing */
+            --space-xs: 8px;
+            --space-sm: 12px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+            --space-4xl: 80px;
+
+            /* Effects */
+            --shadow-subtle: 0 2px 8px rgba(21, 33, 53, 0.08);
+            --shadow-medium: 0 4px 16px rgba(21, 33, 53, 0.12);
+            --shadow-strong: 0 8px 32px rgba(21, 33, 53, 0.16);
+            --shadow-brand: 0 4px 20px rgba(255, 157, 10, 0.25);
+
+            /* Border radius */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+        }
+
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: var(--font-primary) !important;
+            background-color: var(--color-secondary);
+            color: var(--color-dark-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* === PERSONALIZED WELCOME DASHBOARD === */
+        .welcome-dashboard {
+            background: linear-gradient(135deg, var(--color-dark-primary) 0%, var(--color-dark-secondary) 100%);
+            padding: var(--space-4xl) 0;
+            color: var(--color-secondary);
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .welcome-header {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .welcome-header h1 {
+            font-size: var(--text-5xl);
+            font-weight: var(--weight-bold);
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .account-status {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(255, 157, 10, 0.2);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .last-access {
+            font-size: var(--text-sm);
+            opacity: 0.8;
+            margin-top: var(--space-xs);
+        }
+
+        .stats-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-3xl);
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            text-align: center;
+            border: 1px solid rgba(255, 157, 10, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .stat-value {
+            font-size: var(--text-4xl);
+            font-weight: var(--weight-bold);
+            color: var(--color-brand-blue);
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+
+        .stat-label {
+            font-size: var(--text-base);
+            color: var(--color-dark-primary);
+            font-weight: var(--weight-semibold);
+        }
+
+        /* === MAIN CONTENT SECTION === */
+        .portal-content {
+            background: var(--color-secondary);
+            padding: var(--space-4xl) 0;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .section-title {
+            font-size: var(--text-4xl);
+            font-weight: var(--weight-bold);
+            color: var(--color-dark-primary);
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+            position: relative;
+            padding-bottom: var(--space-lg);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #1749ff;
+        }
+
+        /* === INVESTMENT PRODUCTS SECTION === */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-4xl);
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 157, 10, 0.1);
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+            border-color: rgba(255, 157, 10, 0.2);
+        }
+
+        .product-header {
+            border-bottom: 2px solid var(--color-gray-light);
+            padding-bottom: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .product-category {
+            display: inline-block;
+            background: rgba(0, 115, 170, 0.1);
+            color: var(--color-brand-blue);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            font-size: var(--text-xs);
+            font-weight: var(--weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .product-title {
+            font-size: var(--text-2xl);
+            font-weight: var(--weight-bold);
+            color: var(--color-dark-primary);
+            margin: 0;
+        }
+
+        .product-description {
+            color: var(--color-dark-primary);
+            line-height: 1.6;
+            margin: var(--space-md) 0;
+            font-size: var(--text-base);
+        }
+
+        .product-metrics {
+            background: var(--color-gray-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-xs) 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            font-size: var(--text-sm);
+            color: #666;
+            font-weight: var(--weight-semibold);
+        }
+
+        .metric-value {
+            font-size: var(--text-base);
+            color: var(--color-dark-primary);
+            font-weight: var(--weight-bold);
+        }
+
+        .risk-indicator {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+
+        .risk-scale {
+            display: flex;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .risk-bar {
+            height: 20px;
+            flex: 1;
+            border-radius: 4px;
+            background: var(--color-gray-light);
+        }
+
+        .risk-bar.active {
+            background: linear-gradient(135deg, #4ade80 0%, #fbbf24 50%, #ef4444 100%);
+        }
+
+        .risk-label {
+            font-size: var(--text-sm);
+            font-weight: var(--weight-semibold);
+            color: var(--color-dark-primary);
+            white-space: nowrap;
+        }
+
+        .product-cta {
+            display: block;
+            width: 100%;
+            background: var(--color-brand-blue);
+            color: var(--color-secondary);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-full);
+            border: none;
+            font-family: var(--font-primary);
+            font-size: var(--text-base);
+            font-weight: var(--weight-semibold);
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: auto;
+            box-shadow: 0 4px 20px rgba(0, 115, 170, 0.25);
+        }
+
+        .product-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 115, 170, 0.35);
+            background: #005c8a;
+        }
+
+        /* === PRODUCT MODALS === */
+        .product-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .product-modal.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: 3% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.3s ease;
+            direction: rtl;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h2 {
+            background: linear-gradient(135deg, #0073aa 0%, #005c8a 100%);
+            color: white;
+            padding: 30px 40px;
+            margin: 0;
+            border-radius: 20px 20px 0 0;
+            font-size: 2rem;
+            font-family: Simona, sans-serif;
+        }
+
+        .modal-close {
+            color: white;
+            float: left;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.2);
+        }
+
+        .modal-body {
+            padding: 40px;
+        }
+
+        .modal-section {
+            margin-bottom: 35px;
+        }
+
+        .modal-section h3 {
+            color: #0073aa;
+            font-size: 1.5rem;
+            font-family: Simona, sans-serif;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .modal-section p {
+            color: #152135;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-family: Simona, sans-serif;
+        }
+
+        .modal-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-section ul li {
+            color: #152135;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            padding: 8px 0;
+            padding-right: 25px;
+            position: relative;
+            font-family: Simona, sans-serif;
+        }
+
+        .modal-section ul li:before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: #0073aa;
+            font-weight: bold;
+        }
+
+        .returns-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-family: Simona, sans-serif;
+        }
+
+        .returns-table th,
+        .returns-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .returns-table th {
+            background: linear-gradient(135deg, #0073aa 0%, #005c8a 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .returns-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .returns-table tr:hover {
+            background-color: #e0f2fe;
+        }
+
+        .returns-table .total-row {
+            background-color: #dbeafe;
+            font-weight: bold;
+        }
+
+        .modal-cta {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e5e7eb;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff9d0a 0%, #ff8000 100%);
+            color: #152135;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-family: Simona, sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 3px solid #152135;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(255, 157, 10, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 157, 10, 0.5);
+            background: linear-gradient(135deg, #ffb13a 0%, #ff9d0a 100%);
+        }
+
+        /* === DOCUMENT LIBRARY SECTION === */
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-4xl);
+        }
+
+        .document-card {
+            background: var(--color-secondary);
+            border: 2px solid var(--color-gray-light);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            transition: all 0.3s ease;
+        }
+
+        .document-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--color-brand-orange);
+        }
+
+        .document-icon {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        .document-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .document-content {
+            flex: 1;
+        }
+
+        .document-content h3 {
+            font-size: var(--text-lg);
+            font-weight: var(--weight-semibold);
+            color: var(--color-dark-primary);
+            margin: 0 0 var(--space-xs) 0;
+        }
+
+        .document-content p {
+            font-size: var(--text-sm);
+            color: #666;
+            margin: 0;
+        }
+
+        .document-action {
+            background: var(--color-brand-blue);
+            color: var(--color-secondary);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            font-weight: var(--weight-semibold);
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .document-action:hover {
+            background: #005c8a;
+            transform: translateY(-2px);
+        }
+
+        /* === MARKET INSIGHTS SECTION === */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-4xl);
+        }
+
+        .insight-card {
+            background: linear-gradient(135deg, var(--color-gray-light) 0%, var(--color-secondary) 100%);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            border-right: 4px solid var(--color-brand-orange);
+            transition: all 0.3s ease;
+        }
+
+        .insight-card:hover {
+            transform: translateX(-6px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .insight-date {
+            font-size: var(--text-sm);
+            color: #666;
+            margin-bottom: var(--space-sm);
+        }
+
+        .insight-card h3 {
+            font-size: var(--text-xl);
+            font-weight: var(--weight-bold);
+            color: var(--color-dark-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .insight-card p {
+            color: var(--color-dark-primary);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+        }
+
+        .insight-link {
+            color: var(--color-brand-blue);
+            text-decoration: none;
+            font-weight: var(--weight-semibold);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            transition: all 0.3s ease;
+        }
+
+        .insight-link:hover {
+            color: var(--color-brand-orange);
+            gap: var(--space-sm);
+        }
+
+        /* === QUICK ACTIONS PANEL === */
+        .quick-actions {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-4xl);
+            border: 1px solid rgba(255, 157, 10, 0.1);
+        }
+
+        .quick-actions h2 {
+            font-size: var(--text-3xl);
+            font-weight: var(--weight-bold);
+            color: var(--color-dark-primary);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .action-button {
+            background: #ff9d0a;
+            color: #ffffff;
+            border: 2px solid #152135;
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            text-decoration: none;
+            font-weight: var(--weight-semibold);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .action-button:hover {
+            background: #152135;
+            border-color: #ff9d0a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 157, 10, 0.3);
+        }
+
+        /* === WHY CHOOSE MOVNE === */
+        .why-choose {
+            background: var(--color-gray-light);
+            padding: var(--space-4xl) 0;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-4xl);
+        }
+
+        .pillar-card {
+            background: var(--color-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+            box-shadow: var(--shadow-subtle);
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .pillar-icon {
+            width: 90px;
+            height: 90px;
+            background: transparent;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #ffffff;
+            margin: 0 auto var(--space-lg);
+        }
+
+        .pillar-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pillar-card h3 {
+            font-size: var(--text-xl);
+            font-weight: var(--weight-bold);
+            color: var(--color-dark-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .pillar-card p {
+            color: var(--color-dark-primary);
+            line-height: 1.6;
+        }
+
+        /* === DISCLAIMER === */
+        .disclaimer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-4xl) 0;
+            border-right: 4px solid var(--color-brand-orange);
+        }
+
+        .disclaimer h4 {
+            font-size: var(--text-lg);
+            font-weight: var(--weight-bold);
+            color: var(--color-dark-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .disclaimer p {
+            font-size: var(--text-sm);
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: var(--space-xs);
+        }
+
+        /* === MEET SECTION (EXACT ABOUT PAGE STYLING) === */
+        .meet {
+            position: relative;
+            z-index: 2;
+            max-width: 76.438rem;
+            margin: 8.508rem auto 0px;
+            border-radius: 2.109rem;
+            border: 2px solid #1749ff;
+            overflow: hidden;
+            box-shadow: none;
+        }
+
+        .meet_in {
+            display: flex;
+        }
+
+        .meet_intro, .meet_meet {
+            width: 50%;
+        }
+
+        .meet_intro {
+            padding: 4.438rem 4.938rem;
+            background-color: #f5f5f5;
+        }
+
+        .meet_meet {
+            background-color: #1749ff;
+        }
+
+        .meet_meet_out {
+            padding: 6rem 5.375rem;
+        }
+
+        .meet_title {
+            font-size: 2.813rem;
+            line-height: 1.05;
+            color: #1749ff;
+            font-weight: 700;
+            font-family: Simona, sans-serif;
+        }
+
+        .meet_title strong {
+            font-weight: 700;
+        }
+
+        .meet_tx {
+            font-size: 1.688rem;
+            line-height: 1.3;
+            margin-top: 1.625rem;
+            color: #152135;
+            font-family: Simona, sans-serif;
+        }
+
+        .meet_meet_title {
+            font-size: 2.813rem;
+            color: #ffffff;
+            text-align: center;
+            font-weight: 700;
+            font-family: Simona, sans-serif;
+        }
+
+        .meet_form_tx {
+            color: #ffffff;
+            text-align: center;
+            font-size: 1.406rem;
+            margin-top: 1.625rem;
+            font-family: Simona, sans-serif;
+        }
+
+        .meet_form_tx a {
+            font-weight: 700;
+            text-decoration: underline;
+            transition: 0.3s ease-in-out;
+            color: #ffffff;
+        }
+
+        .meet_form_tx a:hover {
+            opacity: 0.8;
+        }
+
+        .meet_items {
+            margin: 3.5rem auto 0px;
+            text-align: center;
+        }
+
+        .meet_items > a {
+            display: inline-block;
+            width: 100%;
+            height: 4.063rem;
+            line-height: 3.87rem;
+            border-radius: 0.703rem;
+            font-size: 2.109rem;
+            color: #ffffff;
+            padding-right: 3.938rem;
+            background-color: #0f31ad;
+            text-align: right;
+            margin-bottom: 1.336rem;
+            background-size: 1.8rem 1.8rem;
+            background-position: 3rem center;
+            background-repeat: no-repeat;
+            font-family: Simona, sans-serif;
+        }
+
+        .meet_items > a:hover {
+            background-color: #152135;
+        }
+
+        .circles_meet {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1.813rem;
+        }
+
+        .circle_meet {
+            width: 7.75rem;
+            height: 7.75rem;
+            border-radius: 50%;
+            background: linear-gradient(211deg, #3FFCFF 2.58%, rgba(63, 252, 255, 0.10) 112.48%);
+            transition: 0.8s ease-in-out;
+        }
+
+        .circle_meet:last-child {
+            position: relative;
+            right: -1.98rem;
+        }
+
+        /* === FOUNDATIONS - BANK LOGOS CAROUSEL (ABOUT PAGE STYLE) === */
+        .foundations {
+            padding: 4rem 0 6rem;
+            background: #ffffff;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .foundations .wrap {
+            max-width: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .foundations_in {
+            width: 100%;
+        }
+
+        .foundations_logos {
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .foundations_logos .slick-track {
+            display: flex !important;
+            align-items: center;
+        }
+
+        .foundations_logos .logos_item {
+            display: inline-block !important;
+            padding: 0 30px;
+            height: 120px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logos_item img {
+            display: block;
+            width: auto !important;
+            height: auto;
+            max-width: 159px;
+            max-height: 119px;
+            object-fit: contain;
+            filter: grayscale(0%);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+
+        .logos_item img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .meet {
+                max-width: 88.806vw;
+                margin-top: 19.1542vw;
+                border-radius: 7.46269vw;
+            }
+
+            .meet_in {
+                display: block;
+                width: 100%;
+            }
+
+            .meet_intro, .meet_meet {
+                width: 100%;
+            }
+
+            .meet_intro {
+                padding: 8.70647vw 5.97015vw 10.4478vw;
+            }
+
+            .circles_meet {
+                margin-bottom: 5.97015vw;
+            }
+
+            .circle_meet {
+                width: 20.8955vw;
+                height: 20.8955vw;
+            }
+
+            .circle_meet:last-child {
+                right: -6vw;
+            }
+
+            .meet_title {
+                font-size: 9.95025vw;
+            }
+
+            .meet_tx {
+                font-size: 5.47264vw;
+                margin-top: 3.9801vw;
+            }
+
+            .meet_tx br {
+                display: none;
+            }
+
+            .meet_meet_title {
+                font-size: 6.21891vw;
+            }
+
+            .meet_items {
+                margin-top: 9.95025vw;
+            }
+
+            .meet_items > a {
+                width: 100%;
+                height: 16.1692vw;
+                line-height: 15.3vw;
+                border-radius: 2.48756vw;
+                font-size: 7.46269vw;
+                padding-right: 8.20896vw;
+                margin-bottom: 3.73134vw;
+                background-size: 7.21393vw 7.21393vw;
+                background-position: 7.46269vw center;
+            }
+
+            .meet_form_tx {
+                font-size: 5.47264vw;
+                line-height: 1.35;
+                margin-top: 10.4478vw;
+            }
+
+            .meet_meet_out {
+                padding: 8.95522vw 5.97015vw 14.1791vw;
+            }
+
+            .foundations_logos .logos_item {
+                width: 33.3333%;
+            }
+
+            .logos_item img {
+                max-width: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .welcome-header h1 {
+                font-size: var(--text-3xl);
+            }
+
+            .stats-panel {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid,
+            .documents-grid,
+            .insights-grid,
+            .actions-grid,
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portal-content,
+            .welcome-dashboard,
+            .why-choose {
+                padding: var(--space-xl) 0;
+            }
+        }
+    </style>
+</head>
+<body class="rtl home wp-singular page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-34 wp-theme-oribsn has-banner">
+
+    <!-- Professional Exclusive Banner -->
+    <div class="exclusive-banner">
+        <div class="exclusive-banner-text">
+            <span class="exclusive-banner-icon"></span>
+            <span>פורטל למשקיעים כשירים בלבד</span>
+            <span class="exclusive-banner-icon"></span>
+        </div>
+    </div>
+
+    <!-- Website Header -->
+    <header class="header">
+        <div class="head_in">
+            <div class="logo_wrap head_logo">
+                <a href="https://movne.co.il/">
+                    <img class="logo_black" src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne Global">
+                </a>
+            </div>
+            <div class="head_menu_wrap no_m">
+                <nav class="main_menu" id="main_menu">
+                    <ul class="frow">
+                        <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                        <li class="mitem mitem_44">
+                            <a href="https://movne.co.il/">בית</a>
+                        </li>
+                        <li class="mitem mitem_46 ">
+                            <a href="https://movne.co.il/products/">מוצרים מובנים</a>
+                        </li>
+                        <li class="mitem mitem_47 ">
+                            <a href="https://movne.co.il/about/">מי אנחנו?</a>
+                        </li>
+                        <li class="mitem mitem_45 ">
+                            <a href="https://movne.co.il/blog/">כתבות</a>
+                        </li>
+                        <li class="mitem mitem_48 ">
+                            <a href="https://movne.co.il/contact/">צרו קשר</a>
+                        </li>
+                        <li class="mitem mitem_910 current">
+                            <a href="#" onclick="return false;" class="current-page">פורטל למשקיעים כשירים</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bt_menu m_only"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+        <div class="head_sticky">
+            <div class="logo_wrap head_logo">
+                <a href="https://movne.co.il/">
+                    <img src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne Global">
+                </a>
+            </div>
+            <div class="head_menu_wrap no_m">
+                <nav class="main_menu" id="main_menu_s">
+                    <ul class="frow">
+                        <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                        <li class="mitem mitem_44 mitemmtoptc">
+                            <a href="https://movne.co.il/">בית</a>
+                        </li>
+                        <li class="mitem mitem_46 mitemmtoptc">
+                            <a href="https://movne.co.il/products/">מוצרים מובנים</a>
+                        </li>
+                        <li class="mitem mitem_47 mitemmtoptc">
+                            <a href="https://movne.co.il/about/">מי אנחנו?</a>
+                        </li>
+                        <li class="mitem mitem_45 mitemmtoptc">
+                            <a href="https://movne.co.il/blog/">כתבות</a>
+                        </li>
+                        <li class="mitem mitem_48 mitemmtoptc">
+                            <a href="https://movne.co.il/contact/">צרו קשר</a>
+                        </li>
+                        <li class="mitem mitem_910 mitemmtoptc current">
+                            <a href="#" onclick="return false;" class="current-page">פורטל למשקיעים כשירים</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bt_menu m_only"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+        <div class="head_menu_wrap m_only">
+            <div class="logo_wrap head_logo">
+                <a href="https://movne.co.il/">
+                    <img class="logo_black" src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne Global">
+                </a>
+            </div>
+            <nav class="main_menu" id="main_menu_s">
+                <ul class="frow">
+                    <li class="mitem mitem_44 mitemmtoptc">
+                        <a href="https://movne.co.il/">בית</a>
+                    </li>
+                    <li class="mitem mitem_46 mitemmtoptc">
+                        <a href="https://movne.co.il/products/">מוצרים מובנים</a>
+                    </li>
+                    <li class="mitem mitem_47 mitemmtoptc">
+                        <a href="https://movne.co.il/about/">מי אנחנו?</a>
+                    </li>
+                    <li class="mitem mitem_45 mitemmtoptc">
+                        <a href="https://movne.co.il/blog/">כתבות</a>
+                    </li>
+                    <li class="mitem mitem_48 mitemmtoptc">
+                        <a href="https://movne.co.il/contact/">צרו קשר</a>
+                    </li>
+                    <li class="mitem mitem_910 mitemmtoptc current">
+                        <a href="#" onclick="return false;" class="current-page">פורטל למשקיעים כשירים</a>
+                    </li>
+                    <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                </ul>
+            </nav>
+            <div class="bt_menu"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+    </header>
+
+    <!-- 1. PERSONALIZED WELCOME DASHBOARD -->
+    <section class="welcome-dashboard">
+        <div class="dashboard-container">
+            <div class="welcome-header">
+                <h1>שלום [משקיע כשיר]</h1>
+                <div class="account-status">
+                    <span class="status-dot"></span>
+                    <span>חשבון פעיל ומאומת</span>
+                </div>
+                <p class="last-access">גישה אחרונה: 3 אוקטובר, 2025 | 14:30</p>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat-card">
+                    <span class="stat-value">12</span>
+                    <span class="stat-label">מוצרים זמינים</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">28</span>
+                    <span class="stat-label">מסמכים ודוחות</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">עדכונים חדשים</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. INVESTMENT PRODUCTS SECTION -->
+    <section class="portal-content">
+        <div class="content-container">
+            <h2 class="section-title">מוצרים מובנים למשקיעים כשירים</h2>
+
+            <div class="products-grid">
+                <!-- Product 1: Capital Protection -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <span class="product-category">הגנת הון</span>
+                        <h3 class="product-title">מוצר מובנה להגנת הון מלאה</h3>
+                    </div>
+                    <p class="product-description">
+                        מוצר פיננסי המעניק הגנה מלאה על ההון המושקע תוך חשיפה לפוטנציאל תשואה הקשור לביצועי מדד S&P 500.
+                    </p>
+                    <div class="product-metrics">
+                        <div class="metric-row">
+                            <span class="metric-label">תקופת השקעה</span>
+                            <span class="metric-value">36 חודשים</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">השתתפות</span>
+                            <span class="metric-value">85%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">השקעה מינימלית</span>
+                            <span class="metric-value">$50,000</span>
+                        </div>
+                    </div>
+                    <div class="risk-indicator">
+                        <span class="risk-label">רמת סיכון:</span>
+                        <div class="risk-scale">
+                            <div class="risk-bar active"></div>
+                            <div class="risk-bar active"></div>
+                            <div class="risk-bar"></div>
+                            <div class="risk-bar"></div>
+                            <div class="risk-bar"></div>
+                        </div>
+                        <span class="risk-label">נמוכה-בינונית</span>
+                    </div>
+                    <button class="product-cta" onclick="openProductModal('product1')">לפרטים נוספים</button>
+                </div>
+
+                <!-- Product 2: Growth Participation -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <span class="product-category">צמיחה</span>
+                        <h3 class="product-title">מוצר צמיחה עם השתתפות מוגברת</h3>
+                    </div>
+                    <p class="product-description">
+                        השקעה המציעה חשיפה מוגברת לעליות בשווקים הפיננסיים תוך הגבלת חשיפה לירידות.
+                    </p>
+                    <div class="product-metrics">
+                        <div class="metric-row">
+                            <span class="metric-label">תקופת השקעה</span>
+                            <span class="metric-value">24 חודשים</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">השתתפות</span>
+                            <span class="metric-value">150%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">השקעה מינימלית</span>
+                            <span class="metric-value">$100,000</span>
+                        </div>
+                    </div>
+                    <div class="risk-indicator">
+                        <span class="risk-label">רמת סיכון:</span>
+                        <div class="risk-scale">
+                            <div class="risk-bar active"></div>
+                            <div class="risk-bar active"></div>
+                            <div class="risk-bar active"></div>
+                            <div class="risk-bar active"></div>
+                            <div class="risk-bar"></div>
+                        </div>
+                        <span class="risk-label">בינונית-גבוהה</span>
+                    </div>
+                    <button class="product-cta" onclick="openProductModal('product2')">לפרטים נוספים</button>
+                </div>
+
+                <!-- Product 3: Income Generation -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <span class="product-category">הכנסה שוטפת</span>
+                        <h3 class="product-title">מוצר ליצירת תזרים קבוע</h3>
+                    </div>
+                    <p class="product-description">
+                        פתרון השקעה המספק תשלומים תקופתיים קבועים לצד הגנה חלקית על ההון המושקע.
+                    </p>
+                    <div class="product-metrics">
+                        <div class="metric-row">
+                            <span class="metric-label">תקופת השקעה</span>
+                            <span class="metric-value">48 חודשים</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">תשואה שנתית</span>
+                            <span class="metric-value">6.5%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">השקעה מינימלית</span>
+                            <span class="metric-value">$75,000</span>
+                        </div>
+                    </div>
+                    <div class="risk-indicator">
+                        <span class="risk-label">רמת סיכון:</span>
+                        <div class="risk-scale">
+                            <div class="risk-bar active"></div>
+                            <div class="risk-bar active"></div>
+                            <div class="risk-bar active"></div>
+                            <div class="risk-bar"></div>
+                            <div class="risk-bar"></div>
+                        </div>
+                        <span class="risk-label">בינונית</span>
+                    </div>
+                    <button class="product-cta" onclick="openProductModal('product3')">לפרטים נוספים</button>
+                </div>
+            </div>
+
+            <!-- Product Modals -->
+            <div id="product1Modal" class="product-modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeProductModal('product1')">&times;</span>
+                    <h2>מוצר הגנה עם צמיחה מתונה</h2>
+                    <div class="modal-body">
+                        <div class="modal-section">
+                            <h3>תיאור המוצר</h3>
+                            <p>מוצר מובנה המספק הגנה על 100% מההון המושקע בתום תקופת ההשקעה, תוך מתן אפשרות להשתתפות בעליות השוק עד לתקרה שנתית של 8.5%. המוצר מתאים למשקיעים שמחפשים איזון בין שמירה על הון להזדמנויות צמיחה.</p>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>מאפיינים עיקריים</h3>
+                            <ul>
+                                <li><strong>תקופת השקעה:</strong> 36 חודשים (3 שנים)</li>
+                                <li><strong>השתתפות בעליות:</strong> 85% מעליית המדד הבסיסי</li>
+                                <li><strong>הגנת הון:</strong> 100% בתום התקופה</li>
+                                <li><strong>השקעה מינימלית:</strong> $50,000</li>
+                                <li><strong>תקרת תשואה שנתית:</strong> 8.5%</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>סיכונים</h3>
+                            <ul>
+                                <li>הגנת ההון בתוקף רק בתום תקופת ההשקעה</li>
+                                <li>במקרה של פדיון מוקדם עלולה להיות חשיפה להפסד</li>
+                                <li>תשואה מוגבלת לתקרה השנתית</li>
+                                <li>סיכון אשראי של הגוף המנפיק</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>למי מתאים המוצר?</h3>
+                            <ul>
+                                <li>משקיעים שמחפשים איזון בין שמירה על הון וצמיחה</li>
+                                <li>אלו שמעוניינים בהגנה מלאה על ההון בתום התקופה</li>
+                                <li>משקיעים עם אופק השקעה בינוני (3 שנים)</li>
+                                <li>מי שמוכנים להשתתפות חלקית בעליות תמורת הגנה</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>דוגמת תשואה</h3>
+                            <table class="returns-table">
+                                <tr>
+                                    <th>תרחיש</th>
+                                    <th>שינוי במדד</th>
+                                    <th>תשואת המשקיע</th>
+                                </tr>
+                                <tr>
+                                    <td>עליה חזקה</td>
+                                    <td>+30%</td>
+                                    <td>+25.5% (85% מהעלייה)</td>
+                                </tr>
+                                <tr>
+                                    <td>עליה מתונה</td>
+                                    <td>+15%</td>
+                                    <td>+12.75%</td>
+                                </tr>
+                                <tr>
+                                    <td>ללא שינוי</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                </tr>
+                                <tr>
+                                    <td>ירידה</td>
+                                    <td>-20%</td>
+                                    <td>0% (הגנת הון)</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="modal-cta">
+                            <a href="#meet" class="btn-primary">רוצה לדעת עוד? בואו ניפגש</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="product2Modal" class="product-modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeProductModal('product2')">&times;</span>
+                    <h2>מוצר צמיחה עם השתתפות מוגברת</h2>
+                    <div class="modal-body">
+                        <div class="modal-section">
+                            <h3>תיאור המוצר</h3>
+                            <p>מוצר מובנה אגרסיבי המציע השתתפות מוגברת של 150% בעליות השוק, תוך הגבלת חשיפה לירידות. המוצר מתאים למשקיעים בעלי תיאבון סיכון גבוה יותר המחפשים פוטנציאל תשואה גבוה.</p>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>מאפיינים עיקריים</h3>
+                            <ul>
+                                <li><strong>תקופת השקעה:</strong> 24 חודשים (שנתיים)</li>
+                                <li><strong>השתתפות בעליות:</strong> 150% מעליית המדד הבסיסי</li>
+                                <li><strong>הגבלת ירידה:</strong> חשיפה מקסימלית להפסד של 20%</li>
+                                <li><strong>השקעה מינימלית:</strong> $100,000</li>
+                                <li><strong>תשואה פוטנציאלית:</strong> עד 45% לשנתיים</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>סיכונים</h3>
+                            <ul>
+                                <li>חשיפה להפסד של עד 20% מההון</li>
+                                <li>המוצר אינו מתאים למשקיעים שמירניים</li>
+                                <li>תלות בביצועי המדד הבסיסי</li>
+                                <li>סיכון נזילות - המוצר אינו סחיר בדרך כלל</li>
+                                <li>סיכון אשראי של הגוף המנפיק</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>למי מתאים המוצר?</h3>
+                            <ul>
+                                <li>משקיעים בעלי תיאבון סיכון גבוה</li>
+                                <li>אלו שמאמינים בפוטנציאל צמיחה של השוק</li>
+                                <li>משקיעים עם אופק זמן קצר-בינוני (2 שנים)</li>
+                                <li>מי שמוכנים לקחת סיכון מבוקר למען תשואה גבוהה יותר</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>דוגמת תשואה</h3>
+                            <table class="returns-table">
+                                <tr>
+                                    <th>תרחיש</th>
+                                    <th>שינוי במדד</th>
+                                    <th>תשואת המשקיע</th>
+                                </tr>
+                                <tr>
+                                    <td>עליה חזקה</td>
+                                    <td>+30%</td>
+                                    <td>+45% (150% מהעלייה)</td>
+                                </tr>
+                                <tr>
+                                    <td>עליה מתונה</td>
+                                    <td>+15%</td>
+                                    <td>+22.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>ללא שינוי</td>
+                                    <td>0%</td>
+                                    <td>0%</td>
+                                </tr>
+                                <tr>
+                                    <td>ירידה מתונה</td>
+                                    <td>-10%</td>
+                                    <td>-10%</td>
+                                </tr>
+                                <tr>
+                                    <td>ירידה חזקה</td>
+                                    <td>-30%</td>
+                                    <td>-20% (הגבלת הפסד)</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="modal-cta">
+                            <a href="#meet" class="btn-primary">רוצה לדעת עוד? בואו ניפגש</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="product3Modal" class="product-modal">
+                <div class="modal-content">
+                    <span class="modal-close" onclick="closeProductModal('product3')">&times;</span>
+                    <h2>מוצר ליצירת תזרים קבוע</h2>
+                    <div class="modal-body">
+                        <div class="modal-section">
+                            <h3>תיאור המוצר</h3>
+                            <p>מוצר מובנה המתמקד ביצירת הכנסה שוטפת קבועה באמצעות תשלומים תקופתיים, תוך הגנה חלקית על ההון המושקע. אידיאלי למשקיעים המחפשים תזרים מזומנים יציב.</p>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>מאפיינים עיקריים</h3>
+                            <ul>
+                                <li><strong>תקופת השקעה:</strong> 48 חודשים (4 שנים)</li>
+                                <li><strong>תשואה שנתית:</strong> 6.5% קבועה</li>
+                                <li><strong>תשלומים:</strong> רבעוניים (כל 3 חודשים)</li>
+                                <li><strong>השקעה מינימלית:</strong> $75,000</li>
+                                <li><strong>הגנת הון:</strong> 80% בתום התקופה</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>סיכונים</h3>
+                            <ul>
+                                <li>הגנה חלקית בלבד על ההון (80%)</li>
+                                <li>חשיפה להפסד של עד 20% בתנאי שוק קשים</li>
+                                <li>פדיון מוקדם עלול לגרום להפסד משמעותי</li>
+                                <li>תשואה קבועה - אין השתתפות בעליות השוק</li>
+                                <li>סיכון אשראי של הגוף המנפיק</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>למי מתאים המוצר?</h3>
+                            <ul>
+                                <li>משקיעים המחפשים הכנסה קבועה ויציבה</li>
+                                <li>גמלאים או אלו הקרובים לפרישה</li>
+                                <li>משקיעים בעלי תיאבון סיכון נמוך-בינוני</li>
+                                <li>מי שצריכים תזרים מזומנים תקופתי</li>
+                            </ul>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>דוגמת תזרים מזומנים</h3>
+                            <p><strong>עבור השקעה של $100,000:</strong></p>
+                            <table class="returns-table">
+                                <tr>
+                                    <th>תקופה</th>
+                                    <th>תשלום רבעוני</th>
+                                    <th>תשלום שנתי</th>
+                                </tr>
+                                <tr>
+                                    <td>שנה 1</td>
+                                    <td>$1,625</td>
+                                    <td>$6,500</td>
+                                </tr>
+                                <tr>
+                                    <td>שנה 2</td>
+                                    <td>$1,625</td>
+                                    <td>$6,500</td>
+                                </tr>
+                                <tr>
+                                    <td>שנה 3</td>
+                                    <td>$1,625</td>
+                                    <td>$6,500</td>
+                                </tr>
+                                <tr>
+                                    <td>שנה 4</td>
+                                    <td>$1,625</td>
+                                    <td>$6,500</td>
+                                </tr>
+                                <tr class="total-row">
+                                    <td><strong>סה"כ</strong></td>
+                                    <td colspan="2"><strong>$26,000 + החזר הון</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="modal-section">
+                            <h3>תרחישי סיום</h3>
+                            <table class="returns-table">
+                                <tr>
+                                    <th>תרחיש</th>
+                                    <th>החזר הון</th>
+                                    <th>סה"כ תשואה</th>
+                                </tr>
+                                <tr>
+                                    <td>שוק יציב</td>
+                                    <td>$100,000</td>
+                                    <td>$26,000 (26%)</td>
+                                </tr>
+                                <tr>
+                                    <td>ירידה מתונה</td>
+                                    <td>$90,000</td>
+                                    <td>$16,000 (16%)</td>
+                                </tr>
+                                <tr>
+                                    <td>ירידה חזקה</td>
+                                    <td>$80,000 (הגנה)</td>
+                                    <td>$6,000 (6%)</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="modal-cta">
+                            <a href="#meet" class="btn-primary">רוצה לדעת עוד? בואו ניפגש</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. DOCUMENT LIBRARY SECTION -->
+            <h2 class="section-title">מסמכים ודוחות</h2>
+
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-icon">
+                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="docGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#40FCFF;stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:#0073aa;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="12" y="5" width="26" height="40" rx="3" fill="url(#docGrad1)"/>
+                            <line x1="18" y1="15" x2="32" y2="15" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18" y1="22" x2="32" y2="22" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18" y1="29" x2="28" y2="29" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>תשקיף מוצרים</h3>
+                        <p>עדכון: 1 אוקטובר, 2025</p>
+                    </div>
+                    <a href="#" class="document-action">הורדה</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">
+                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="docGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff9d0a;stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:#ff6b00;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="25" cy="25" r="18" fill="url(#docGrad2)"/>
+                            <path d="M 25 15 L 25 35 M 15 25 L 35 25" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>מזכר הצעה</h3>
+                        <p>עדכון: 28 ספטמבר, 2025</p>
+                    </div>
+                    <a href="#" class="document-action">הורדה</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">
+                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="docGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#40FCFF;stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:#0073aa;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <polygon points="25,8 40,42 10,42" fill="url(#docGrad3)"/>
+                            <text x="25" y="35" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold">!</text>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>גילוי נאות</h3>
+                        <p>עדכון: 25 ספטמבר, 2025</p>
+                    </div>
+                    <a href="#" class="document-action">הורדה</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">
+                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="docGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff9d0a;stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:#ff6b00;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="10" y="10" width="30" height="30" rx="4" fill="url(#docGrad4)"/>
+                            <path d="M 15 20 L 22 27 L 35 15" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>תנאים והגבלות</h3>
+                        <p>עדכון: 20 ספטמבר, 2025</p>
+                    </div>
+                    <a href="#" class="document-action">הורדה</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">
+                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="docGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#40FCFF;stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:#0073aa;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="12" y="35" width="8" height="10" fill="url(#docGrad5)"/>
+                            <rect x="21" y="28" width="8" height="17" fill="url(#docGrad5)"/>
+                            <rect x="30" y="20" width="8" height="25" fill="url(#docGrad5)"/>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>דוח ביצועים רבעוני</h3>
+                        <p>עדכון: 15 ספטמבר, 2025</p>
+                    </div>
+                    <a href="#" class="document-action">הורדה</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">
+                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="docGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff9d0a;stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:#ff6b00;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M 15 8 L 35 8 L 38 15 L 35 22 L 15 22 L 12 15 Z" fill="url(#docGrad6)"/>
+                            <path d="M 15 28 L 35 28 L 38 35 L 35 42 L 15 42 L 12 35 Z" fill="url(#docGrad6)"/>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>מדריך למשקיע</h3>
+                        <p>עדכון: 10 ספטמבר, 2025</p>
+                    </div>
+                    <a href="#" class="document-action">הורדה</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">
+                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="docGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#40FCFF;stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:#0073aa;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="10" y="8" width="30" height="34" rx="3" fill="url(#docGrad7)"/>
+                            <circle cx="25" cy="18" r="5" fill="#ffffff"/>
+                            <path d="M 15 32 Q 25 26 35 32" fill="#ffffff" stroke="none"/>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>דוח שנתי מבוקר</h3>
+                        <p>עדכון: 1 ספטמבר, 2025</p>
+                    </div>
+                    <a href="#" class="document-action">הורדה</a>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-icon">
+                        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="docGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff9d0a;stop-opacity:0.8"/>
+                                    <stop offset="100%" style="stop-color:#ff6b00;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="18" y="10" width="14" height="18" rx="2" fill="url(#docGrad8)"/>
+                            <circle cx="25" cy="35" r="6" fill="url(#docGrad8)"/>
+                            <rect x="22" y="28" width="6" height="8" fill="url(#docGrad8)"/>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>מדיניות פרטיות</h3>
+                        <p>עדכון: 1 אוגוסט, 2025</p>
+                    </div>
+                    <a href="#" class="document-action">הורדה</a>
+                </div>
+            </div>
+
+            <!-- 4. MARKET INSIGHTS SECTION -->
+            <h2 class="section-title">תובנות שוק ומחקר</h2>
+
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <p class="insight-date">2 אוקטובר, 2025</p>
+                    <h3>מגמות שוק גלובליות - רבעון 3</h3>
+                    <p>
+                        ניתוח מעמיק של מגמות השוק הגלובלי ברבעון השלישי, כולל השפעת הריבית, אינפלציה, ומגמות טכנולוגיות על תיקי ההשקעות המובנים.
+                    </p>
+                    <a href="#" class="insight-link">קרא עוד ←</a>
+                </div>
+
+                <div class="insight-card">
+                    <p class="insight-date">25 ספטמבר, 2025</p>
+                    <h3>תחזית כלכלית 2026</h3>
+                    <p>
+                        תחזית מקיפה למצב הכלכלי העולמי לשנת 2026, כולל ניתוח של מדיניות הריבית הצפויה, צמיחה כלכלית והשפעות גיאו-פוליטיות על השקעות.
+                    </p>
+                    <a href="#" class="insight-link">קרא עוד ←</a>
+                </div>
+
+                <div class="insight-card">
+                    <p class="insight-date">15 ספטמבר, 2025</p>
+                    <h3>אסטרטגיית השקעה לשוק משתנה</h3>
+                    <p>
+                        המלצות מעודכנות לבניית תיק השקעות מאוזן בסביבה של תנודתיות גבוהה, תוך שימוש במוצרים מובנים להגנה ופוטנציאל תשואה.
+                    </p>
+                    <a href="#" class="insight-link">קרא עוד ←</a>
+                </div>
+            </div>
+
+            <!-- 5. QUICK ACTIONS PANEL -->
+            <div class="quick-actions">
+                <h2>פעולות מהירות</h2>
+                <div class="actions-grid">
+                    <a href="#meet" class="action-button">
+                        קבע פגישה עם יועץ
+                    </a>
+                    <a href="#" class="action-button">
+                        הוראות העברה בנקאית
+                    </a>
+                    <a href="#" class="action-button">
+                        טפסי השקעה
+                    </a>
+                    <a href="#meet" class="action-button">
+                        צור קשר
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. WHY CHOOSE MOVNE SECTION -->
+    <section class="why-choose">
+        <div class="content-container">
+            <h2 class="section-title">למה לבחור במוצרים מובנים של Movne?</h2>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="pillarGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#40FCFF;stop-opacity:0.9"/>
+                                    <stop offset="100%" style="stop-color:#0073aa;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="10" y="30" width="15" height="50" fill="url(#pillarGrad1)" rx="2"/>
+                            <rect x="30" y="20" width="15" height="60" fill="url(#pillarGrad1)" rx="2"/>
+                            <rect x="50" y="10" width="15" height="70" fill="url(#pillarGrad1)" rx="2"/>
+                            <polygon points="45,5 52,12 38,12" fill="#ffffff"/>
+                        </svg>
+                    </div>
+                    <h3>מוסדות פיננסיים מובילים</h3>
+                    <p>כל המוצרים מונפקים על ידי בנקים ומוסדות פיננסיים בינלאומיים בעלי דירוג אשראי גבוה, המספקים ביטחון נוסף להשקעה.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="pillarGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ff9d0a;stop-opacity:0.9"/>
+                                    <stop offset="100%" style="stop-color:#ff6b00;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="45" cy="30" r="15" fill="none" stroke="url(#pillarGrad2)" stroke-width="4"/>
+                            <circle cx="45" cy="30" r="8" fill="url(#pillarGrad2)"/>
+                            <path d="M 25 55 L 45 40 L 65 55 L 65 75 L 25 75 Z" fill="url(#pillarGrad2)"/>
+                        </svg>
+                    </div>
+                    <h3>התאמה אישית</h3>
+                    <p>כל מוצר מותאם לצרכים הספציפיים שלכם, תוך התחשבות בפרופיל הסיכון, יעדי ההשקעה ואופק הזמן.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="pillarGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#40FCFF;stop-opacity:0.9"/>
+                                    <stop offset="100%" style="stop-color:#0073aa;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <polygon points="45,15 75,40 75,75 15,75 15,40" fill="url(#pillarGrad3)"/>
+                            <rect x="35" y="45" width="20" height="30" fill="#ffffff" opacity="0.9"/>
+                            <rect x="25" y="30" width="12" height="12" fill="#ffffff" opacity="0.8"/>
+                            <rect x="53" y="30" width="12" height="12" fill="#ffffff" opacity="0.8"/>
+                        </svg>
+                    </div>
+                    <h3>שקיפות מלאה</h3>
+                    <p>מידע ברור ומפורט על כל היבטי ההשקעה, כולל עלויות, סיכונים ומנגנוני הפעולה של כל מוצר.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="pillarGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#40FCFF;stop-opacity:0.4"/>
+                                    <stop offset="100%" style="stop-color:#40FCFF;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="30" cy="28" r="12" fill="url(#pillarGrad4)"/>
+                            <circle cx="60" cy="28" r="12" fill="url(#pillarGrad4)"/>
+                            <ellipse cx="45" cy="58" rx="28" ry="18" fill="url(#pillarGrad4)"/>
+                            <path d="M 20 75 Q 45 65 70 75" stroke="#40FCFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>ליווי מקצועי</h3>
+                    <p>צוות יועצים מנוסים לליווי אישי לאורך כל תקופת ההשקעה, כולל דיווחים שוטפים ותמיכה מקצועית.</p>
+                </div>
+            </div>
+
+            <!-- 7. DISCLAIMER -->
+            <div class="disclaimer">
+                <h4>גילוי נאות</h4>
+                <p>תשואות העבר אינן מהוות ערובה לתשואות עתידיות. ההשקעה במוצרים מובנים כרוכה בסיכונים, לרבות אפשרות לאובדן חלק או כל ההון המושקע.</p>
+                <p>המידע המוצג באתר זה מיועד למשקיעים כשירים בלבד כהגדרתם בחוק הסדרת העיסוק בייעוץ השקעות, בשיווק השקעות ובניהול תיקי השקעות, התשנ"ה-1995.</p>
+                <p>המידע אינו מהווה תחליף לייעוץ או שיווק השקעות המתחשב בנתונים ובצרכים המיוחדים של כל אדם. יש לקרוא בעיון את מסמכי ההנפקה לפני קבלת החלטת השקעה.</p>
+                <p>עדכון אחרון: אוקטובר 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. MEET SECTION (EXACT FROM MAIN SITE) -->
+    <div class="meet" id="meet">
+	<div class="meet_in">
+		<div class="meet_intro">
+			<div class="circles_meet"><div class="circle_meet"></div><div class="circle_meet"></div></div>
+			<div class="meet_title"><strong>בואו ניפגש!</strong><br>תאמו פגישת היכרות</div>
+			<div class="meet_tx">בחרו את סוג הפגישה והמועד הנוח <br>ביותר עבורכם, אנו נשלח לכם זימון <br>במייל ונתקשר מולכם בוואטסאפ</div>
+		</div>
+		<div class="meet_meet">
+			<div class="meet_meet_out">
+				<div class="meet_meet_title">איך תעדיפו להיפגש?</div>
+				<div class="meet_items">
+					<a class="meet_item zoom" data-meet-type="zoom" href="javascript: void(0);">Zoom</a>
+					<a class="meet_item phone" data-meet-type="phone" href="javascript: void(0);">בטלפון</a>
+					<a class="meet_item office" data-meet-type="office" href="javascript: void(0);">אצלנו במשרד</a>
+				</div>
+				<div class="meet_form_tx">או שפשוט <a href="javascript: void(0);" data-meet-type="contact">תשאירו כאן</a> פרטים ונחזור אליכם בטלפון</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <!-- 9. BANK LOGOS CAROUSEL (EXACT FROM MAIN SITE) -->
+    <section class="foundations" id="foundations">
+        <div class="wrap">
+            <div class="foundations_in">
+                <div class="foundations_logos">
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-1@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-2@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-3@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-4@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-5@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-6@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-7@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-8@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-9@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-10@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-11@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-12@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-13@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-14@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-15@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-16@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-17@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-18@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-19@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-20@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-21@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-22@2x.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Footer -->
+    <footer class="footer">
+        <div class="ft_top">
+            <div class="wrap">
+                <div class="ft_top_in">
+                    <div class="ft_col ft_col_1">
+                        <nav class="ft_menu" id="ft_menu">
+                            <ul>
+                                <li class="ftmitem mitem_51 "><a href="https://movne.co.il/products/">מוצרים מובנים</a></li>
+                                <li class="ftmitem mitem_52 "><a href="https://movne.co.il/about/">מי אנחנו?</a></li>
+                                <li class="ftmitem mitem_50 "><a href="https://movne.co.il/blog/">כתבות</a></li>
+                                <li class="ftmitem mitem_53 "><a href="https://movne.co.il/contact/">צרו קשר</a></li>
+                                <li class="ftmitem mitem_897 "><a href="https://movne.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%9e%d7%a9%d7%a7%d7%99%d7%a2-%d7%9b%d7%a9%d7%99%d7%a8-2/">פורטל למשקיעים כשירים</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ft_col ft_col_2">
+                        <nav class="ft_menu" id="ft_menu">
+                            <ul>
+                                <li class="ftmitem mitem_667 "><a href="https://movne.co.il/privacy/">גילוי נאות</a></li>
+                                <li class="ftmitem mitem_64 "><a href="https://movne.co.il/accessibility/">הצהרת נגישות</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ft_col ft_col_3">
+                        <div class="ft_tx">המוצרים מובנים של מובנה גלובל מונפקים על ידי הגופים הפיננסיים האיתנים ביותר בעולם. מה שמספק ביטחון נוסף למחזיקים בהם. זה מאפשר פיזור רחב של הנכסים ולא מגביל את ההשקעה לבנקים מקומיים בלבד. האמינות והביטחון שמספקים הגופים... <br>
+המוצרים מובנים של מובנה גלובל מונפקים על ידי הגופים הפיננסיים האיתנים ביותר בעולם. מה שמספק ביטחון נוסף למחזיקים בהם.<br>
+למוצרים מובנים מגוון רחב של תשואות ותכונות שמאפשרות להתאים את ההשקעה בהם להעדפות האישיות של המשקיע.</div>
+                        <div class="more"><a href="javascript: void(0);">קראו עוד</a></div>
+                    </div>
+                    <div class="uparr"><a href="javascript: void(0);"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="ft_bottom">
+            <div class="wrap">
+                <div class="ft_bottom_in">
+                    <div class="ft_col ft_col_1">
+                        <div class="ft_soc soc_items">
+                            <a class="linkedin" href="#" target="_blank" aria-label="LinkedIn"></a>
+                            <a class="instagram" href="#" target="_blank" aria-label="Instagram"></a>
+                            <a class="telegram" href="#" target="_blank" aria-label="Telegram"></a>
+                            <a class="tiktok" href="#" target="_blank" aria-label="TikTok"></a>
+                        </div>
+                    </div>
+                    <div class="ft_col ft_col_2">
+                        <div class="ft_email">
+                            <a class="email" href="mailto:info@movne.co.il" target="_blank">info@movne.co.il</a>
+                        </div>
+                    </div>
+                    <div class="ft_col ft_col_3 no_m">
+                        <div class="ft_rights">© כל הזכויות שמורות למובנה בע״מ</div>
+                    </div>
+                    <div class="ft_col ft_col_4 no_m">
+                        <div class="creds">
+                            <span>webdev</span>
+                            <a href="https://oribsn.dev" target="_blank">
+                                <span>oribsn</span>
+                                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/svg/oribsn.svg" alt="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה" title="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ft_logo">
+                        <img src="https://movne.co.il/wp-content/uploads/2024/09/ft_logo.svg" alt="Movne Global">
+                    </div>
+                    <div class="ft_rights m_only">© כל הזכויות שמורות למובנה בע״מ</div>
+                    <div class="creds_wrap m_only">
+                        <div class="creds">
+                            <span>webdev</span>
+                            <a href="https://oribsn.dev" target="_blank">
+                                <span>oribsn</span>
+                                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/svg/oribsn.svg" alt="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה" title="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Website Scripts -->
+    <script src="https://cdn.userway.org/widget.js" data-account="vVuAj6w9Kj"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17" id="mediaelement-core-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.2.17" id="mediaelement-migrate-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=6.8.2" id="wp-mediaelement-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.17" id="mediaelement-vimeo-js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/jquery.popupoverlay.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/modal_video/jquery-modal-video.min.js?v=3"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/jquery.paroller.min.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/zebra_pin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/gsap/SplitText.min.js"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/scripts.js?v=1758004795"></script>
+    <script type="text/javascript" src="https://movne.co.il/wp-content/themes/oribsn/assets/js/animations.js?v=1758004795"></script>
+
+    <script>
+        console.log('Comprehensive Investor Portal - BlackRock/Vanguard Level');
+
+        // Initialize Bank Logos Carousel
+        (function($) {
+            $(window).on('load', function(){
+                if (typeof $.fn.slick !== 'undefined') {
+                    $('.foundations_logos').slick({
+                        slidesToShow: 12,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 0,
+                        speed: 2000,
+                        cssEase: 'linear',
+                        infinite: true,
+                        arrows: false,
+                        dots: false,
+                        pauseOnHover: false,
+                        pauseOnFocus: false,
+                        rtl: true,
+                        responsive: [{
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        }]
+                    });
+                    console.log('Bank logos carousel initialized');
+                }
+            });
+        })(jQuery);
+
+        // Smooth scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.stat-card, .product-card, .document-card, .insight-card, .pillar-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+                observer.observe(card);
+            });
+        });
+
+        // Product Modal Functions
+        function openProductModal(productId) {
+            const modal = document.getElementById(productId + 'Modal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        }
+
+        function closeProductModal(productId) {
+            const modal = document.getElementById(productId + 'Modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.product-modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.product-modal.active');
+                modals.forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

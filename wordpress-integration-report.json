@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-09-19T14:03:24.826Z",
+  "results": {
+    "login": false,
+    "navigation": [],
+    "pagesFound": [],
+    "mediaUpload": [],
+    "menuUpdate": false,
+    "testing": [],
+    "errors": [
+      "Admin access: Unable to determine page state - not login page or dashboard"
+    ]
+  },
+  "summary": {
+    "loginSuccessful": false,
+    "pagesCount": 0,
+    "menusCount": 0,
+    "uploadsAttempted": 0,
+    "uploadsSuccessful": 0,
+    "menuUpdated": false,
+    "testsPerformed": 0,
+    "errorsCount": 1
+  }
+}

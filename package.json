@@ -1,16 +1,1 @@
-{
-  "name": "web-movne",
-  "version": "1.0.0",
-  "main": "wordpress-audit-script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "dotenv": "^16.6.1",
-    "playwright": "^1.55.0"
-  }
-}
+{"name":"wordpress-portal-automation","version":"1.0.0","description":"WordPress portal page automation and blank content fix","main":"wordpress-blank-content-fix.js","scripts":{"fix-blanks":"node wordpress-blank-content-fix.js","create-portal":"node create-portal-page-reliable.js","install-playwright":"npx playwright install chromium"},"dependencies":{"playwright":"^1.40.0"},"devDependencies":{},"keywords":["wordpress","automation","playwright","portal"],"author":"WordPress Automation Specialist","license":"MIT"}

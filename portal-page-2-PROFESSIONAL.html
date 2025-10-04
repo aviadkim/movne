@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="wp-theme-oribsn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פורטל למשקיעים כשירים - Movne</title>
+
+    <!-- Original Website Stylesheets -->
+    <link rel="stylesheet" id="wp-block-library-rtl-css" href="https://movne.co.il/wp-includes/css/dist/block-library/style-rtl.min.css?ver=6.8.2" type="text/css" media="all">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/rtl.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick.css">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/modal_video/modal-video.min.css">
+    <link rel="stylesheet" type="text/css" href="https://movne.co.il/wp-content/themes/oribsn/style.css?v=1758004795">
+
+    <style>
+        :root {
+            /* Movne Brand Colors */
+            --color-primary-dark: #152135;
+            --color-secondary-dark: #34394d;
+            --color-brand-orange: #ff9d0a;
+            --color-brand-blue: #0073aa;
+            --color-white: #ffffff;
+            --color-gray-light: #f8f9fa;
+            --color-gray-medium: #eeeeee;
+            --color-text-primary: #152135;
+
+            /* Typography */
+            --font-primary: 'Simona', sans-serif;
+            --font-weight-normal: 400;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Spacing */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            --space-3xl: 96px;
+
+            /* Effects */
+            --shadow-subtle: 0 2px 8px rgba(21, 33, 53, 0.08);
+            --shadow-medium: 0 4px 16px rgba(21, 33, 53, 0.12);
+            --shadow-strong: 0 8px 32px rgba(21, 33, 53, 0.16);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* === PROFESSIONAL TOP BANNER === */
+        .exclusive-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 50%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: 12px 20px;
+            text-align: center;
+            z-index: 10000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-family: var(--font-primary);
+            font-size: 14px;
+            font-weight: var(--font-weight-semibold);
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--color-brand-orange);
+        }
+
+        body.has-banner {
+            padding-top: 50px;
+        }
+
+        body.has-banner .header {
+            top: 50px;
+        }
+
+        /* === PORTAL PAGE STYLES === */
+        .portal-page {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+            min-height: 100vh;
+            padding: var(--space-3xl) 0;
+        }
+
+        .portal-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* Hero Section */
+        .portal-hero {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+            color: var(--color-white);
+        }
+
+        .portal-hero h1 {
+            font-size: 48px;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .portal-hero p {
+            font-size: 20px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto var(--space-xl);
+            line-height: 1.6;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-3xl);
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            border: 1px solid rgba(255, 157, 10, 0.1);
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+            border-color: rgba(255, 157, 10, 0.2);
+        }
+
+        .product-header {
+            border-bottom: 2px solid var(--color-gray-medium);
+            padding-bottom: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .product-category {
+            display: inline-block;
+            background: rgba(0, 115, 170, 0.1);
+            color: var(--color-brand-blue);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text-primary);
+            margin: 0;
+        }
+
+        .product-body {
+            flex: 1;
+            margin-bottom: var(--space-md);
+        }
+
+        .product-description {
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+            font-size: 15px;
+        }
+
+        .product-features {
+            list-style: none;
+            padding: 0;
+            margin: var(--space-md) 0;
+        }
+
+        .product-features li {
+            padding: var(--space-xs) 0;
+            color: var(--color-text-primary);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-features li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--color-brand-blue);
+            border-radius: 50%;
+            margin-left: var(--space-sm);
+            flex-shrink: 0;
+        }
+
+        .product-metrics {
+            background: var(--color-gray-light);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-md) 0;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-xs) 0;
+            border-bottom: 1px solid var(--color-gray-medium);
+        }
+
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            font-size: 13px;
+            color: #666;
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .metric-value {
+            font-size: 15px;
+            color: var(--color-text-primary);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .product-footer {
+            border-top: 1px solid var(--color-gray-medium);
+            padding-top: var(--space-md);
+        }
+
+        .product-cta {
+            display: inline-block;
+            width: 100%;
+            background: var(--color-brand-blue);
+            color: var(--color-white);
+            padding: 16px 24px;
+            border-radius: 9999px;
+            border: none;
+            font-family: var(--font-primary);
+            font-size: 16px;
+            font-weight: var(--font-weight-semibold);
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0, 115, 170, 0.25);
+        }
+
+        .product-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 115, 170, 0.35);
+            background: #005c8a;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            margin-bottom: var(--space-xl);
+            border: 1px solid rgba(255, 157, 10, 0.1);
+        }
+
+        .info-section h2 {
+            font-size: 32px;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .info-item {
+            padding: var(--space-md);
+        }
+
+        .info-item h3 {
+            font-size: 18px;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-brand-blue);
+            margin-bottom: var(--space-sm);
+        }
+
+        .info-item p {
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* Risk Indicator */
+        .risk-indicator {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin: var(--space-md) 0;
+        }
+
+        .risk-scale {
+            display: flex;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .risk-bar {
+            height: 24px;
+            flex: 1;
+            border-radius: 4px;
+            background: var(--color-gray-medium);
+        }
+
+        .risk-bar.active {
+            background: linear-gradient(135deg, #4ade80 0%, #fbbf24 50%, #ef4444 100%);
+        }
+
+        .risk-label {
+            font-size: 13px;
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            white-space: nowrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .portal-hero h1 {
+                font-size: 32px;
+            }
+
+            .portal-hero p {
+                font-size: 16px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body.has-banner {
+                padding-top: 44px;
+            }
+
+            .portal-page {
+                padding: var(--space-xl) 0;
+            }
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-top: var(--space-2xl);
+            border-right: 4px solid var(--color-brand-orange);
+        }
+
+        .disclaimer h4 {
+            font-size: 16px;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .disclaimer p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: var(--space-xs);
+        }
+
+        /* Document Grid */
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .document-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-medium);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            transition: var(--transition);
+        }
+
+        .document-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--color-brand-orange);
+        }
+
+        .document-icon {
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+
+        .document-content {
+            flex: 1;
+        }
+
+        .document-content h3 {
+            font-size: 16px;
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text-primary);
+            margin: 0 0 var(--space-xs) 0;
+        }
+
+        .document-content p {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+        }
+
+        .document-action {
+            background: var(--color-brand-blue);
+            color: var(--color-white);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: var(--font-weight-semibold);
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .document-action:hover {
+            background: #005c8a;
+            transform: translateY(-2px);
+        }
+
+        /* Bank Logos Carousel */
+        .bottom_logos {
+            background: var(--color-white);
+            padding: var(--space-2xl) 0;
+            margin-top: var(--space-3xl);
+            overflow: hidden;
+        }
+
+        .logos_items {
+            display: flex;
+            align-items: center;
+        }
+
+        .logos_item {
+            padding: 0 var(--space-lg);
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logos_item img {
+            max-height: 60px;
+            width: auto;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .logos_item:hover img {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Original WordPress Scripts -->
+    <script src="https://movne.co.il/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+    <script src="https://movne.co.il/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body class="has-banner">
+
+    <!-- Professional Banner -->
+    <div class="exclusive-banner">
+        <div class="exclusive-banner-text">
+            פורטל למשקיעים כשירים בלבד
+        </div>
+    </div>
+
+    <!-- Original Header -->
+    <header class="header">
+        <div class="top_line">
+            <a href="https://movne.co.il/">
+                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/logo.svg" alt="Movne Global" class="logo">
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#meet">בואו נדבר!</a></li>
+                    <li><a href="https://movne.co.il/">בית</a></li>
+                    <li><a href="https://movne.co.il/products/">מוצרים מובנים</a></li>
+                    <li><a href="https://movne.co.il/about/">מי אנחנו?</a></li>
+                    <li><a href="https://movne.co.il/blog/">כתבות</a></li>
+                    <li><a href="https://movne.co.il/contact/">צרו קשר</a></li>
+                    <li><a href="https://movne.co.il/wp-content/uploads/2025/10/portal-final-corrected-1-1.html">פורטל למשקיעים כשירים</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="mobile_menu">
+            <a href="https://movne.co.il/">
+                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/logo.svg" alt="Movne Global" class="logo">
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#meet">בואו נדבר!</a></li>
+                    <li><a href="https://movne.co.il/">בית</a></li>
+                    <li><a href="https://movne.co.il/products/">מוצרים מובנים</a></li>
+                    <li><a href="https://movne.co.il/about/">מי אנחנו?</a></li>
+                    <li><a href="https://movne.co.il/blog/">כתבות</a></li>
+                    <li><a href="https://movne.co.il/contact/">צרו קשר</a></li>
+                    <li><a href="https://movne.co.il/wp-content/uploads/2025/10/portal-final-corrected-1-1.html">פורטל למשקיעים כשירים</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Portal Content -->
+    <main class="portal-page">
+        <div class="portal-container">
+
+            <!-- Hero Section -->
+            <div class="portal-hero">
+                <h1>מוצרים מובנים למשקיעים כשירים</h1>
+                <p>פתרונות השקעה מתקדמים ומותאמים אישית עם גישה למוצרים פיננסיים ברמה מוסדית</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+
+                <!-- Product 1: Capital Protection -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <span class="product-category">הגנת הון</span>
+                        <h3 class="product-title">מוצר מובנה להגנת הון מלאה</h3>
+                    </div>
+                    <div class="product-body">
+                        <p class="product-description">
+                            מוצר פיננסי המעניק הגנה מלאה על ההון המושקע תוך חשיפה לפוטנציאל תשואה הקשור לביצועי מדד S&P 500.
+                        </p>
+                        <div class="product-metrics">
+                            <div class="metric-row">
+                                <span class="metric-label">תקופת השקעה</span>
+                                <span class="metric-value">36 חודשים</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">השתתפות</span>
+                                <span class="metric-value">85%</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">השקעה מינימלית</span>
+                                <span class="metric-value">$50,000</span>
+                            </div>
+                        </div>
+                        <div class="risk-indicator">
+                            <span class="risk-label">רמת סיכון:</span>
+                            <div class="risk-scale">
+                                <div class="risk-bar active"></div>
+                                <div class="risk-bar active"></div>
+                                <div class="risk-bar"></div>
+                                <div class="risk-bar"></div>
+                                <div class="risk-bar"></div>
+                            </div>
+                            <span class="risk-label">נמוכה-בינונית</span>
+                        </div>
+                        <ul class="product-features">
+                            <li>הגנה על 100% מההון בפירעון</li>
+                            <li>חשיפה לעליות מדד S&P 500</li>
+                            <li>מונפק על ידי בנק בינלאומי דירוג AA+</li>
+                            <li>נזילות חודשית בתנאים מוגדרים</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="#meet" class="product-cta">לפרטים נוספים</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Growth Participation -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <span class="product-category">צמיחה</span>
+                        <h3 class="product-title">מוצר צמיחה עם השתתפות מוגברת</h3>
+                    </div>
+                    <div class="product-body">
+                        <p class="product-description">
+                            השקעה המציעה חשיפה מוגברת לעליות בשווקים הפיננסיים תוך הגבלת חשיפה לירידות.
+                        </p>
+                        <div class="product-metrics">
+                            <div class="metric-row">
+                                <span class="metric-label">תקופת השקעה</span>
+                                <span class="metric-value">24 חודשים</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">השתתפות</span>
+                                <span class="metric-value">150%</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">השקעה מינימלית</span>
+                                <span class="metric-value">$100,000</span>
+                            </div>
+                        </div>
+                        <div class="risk-indicator">
+                            <span class="risk-label">רמת סיכון:</span>
+                            <div class="risk-scale">
+                                <div class="risk-bar active"></div>
+                                <div class="risk-bar active"></div>
+                                <div class="risk-bar active"></div>
+                                <div class="risk-bar active"></div>
+                                <div class="risk-bar"></div>
+                            </div>
+                            <span class="risk-label">בינונית-גבוהה</span>
+                        </div>
+                        <ul class="product-features">
+                            <li>השתתפות של 150% בעליות המדד</li>
+                            <li>מנגנון הגנה על 90% מההון</li>
+                            <li>קשור למדד NASDAQ 100</li>
+                            <li>אפשרות לפירעון מוקדם לאחר 12 חודשים</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="#meet" class="product-cta">לפרטים נוספים</a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Income Generation -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <span class="product-category">הכנסה שוטפת</span>
+                        <h3 class="product-title">מוצר ליצירת תזרים קבוע</h3>
+                    </div>
+                    <div class="product-body">
+                        <p class="product-description">
+                            פתרון השקעה המספק תשלומים תקופתיים קבועים לצד הגנה חלקית על ההון המושקע.
+                        </p>
+                        <div class="product-metrics">
+                            <div class="metric-row">
+                                <span class="metric-label">תקופת השקעה</span>
+                                <span class="metric-value">48 חודשים</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">תשואה שנתית</span>
+                                <span class="metric-value">6.5%</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric-label">השקעה מינימלית</span>
+                                <span class="metric-value">$75,000</span>
+                            </div>
+                        </div>
+                        <div class="risk-indicator">
+                            <span class="risk-label">רמת סיכון:</span>
+                            <div class="risk-scale">
+                                <div class="risk-bar active"></div>
+                                <div class="risk-bar active"></div>
+                                <div class="risk-bar active"></div>
+                                <div class="risk-bar"></div>
+                                <div class="risk-bar"></div>
+                            </div>
+                            <span class="risk-label">בינונית</span>
+                        </div>
+                        <ul class="product-features">
+                            <li>תשלומים רבעוניים קבועים</li>
+                            <li>הגנה על 95% מההון בפירעון</li>
+                            <li>קשור לסל מדדי אג"ח גלובליים</li>
+                            <li>אפשרות למשיכה חלקית אחת לשנה</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="#meet" class="product-cta">לפרטים נוספים</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Information Section -->
+            <div class="info-section">
+                <h2>למה לבחור במוצרים מובנים של Movne?</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3>מוסדות פיננסיים מובילים</h3>
+                        <p>כל המוצרים מונפקים על ידי בנקים ומוסדות פיננסיים בינלאומיים בעלי דירוג אשראי גבוה, המספקים ביטחון נוסף להשקעה.</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>התאמה אישית</h3>
+                        <p>כל מוצר מותאם לצרכים הספציפיים שלכם, תוך התחשבות בפרופיל הסיכון, יעדי ההשקעה ואופק הזמן.</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>שקיפות מלאה</h3>
+                        <p>מידע ברור ומפורט על כל היבטי ההשקעה, כולל עלויות, סיכונים ומנגנוני הפעולה של כל מוצר.</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>ליווי מקצועי</h3>
+                        <p>צוות יועצים מנוסים לליווי אישי לאורך כל תקופת ההשקעה, כולל דיווחים שוטפים ותמיכה מקצועית.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="disclaimer">
+                <h4>גילוי נאות</h4>
+                <p>תשואות העבר אינן מהוות ערובה לתשואות עתידיות. ההשקעה במוצרים מובנים כרוכה בסיכונים, לרבות אפשרות לאובדן חלק או כל ההון המושקע.</p>
+                <p>המידע המוצג באתר זה מיועד למשקיעים כשירים בלבד כהגדרתם בחוק הסדרת העיסוק בייעוץ השקעות, בשיווק השקעות ובניהול תיקי השקעות, התשנ"ה-1995.</p>
+                <p>המידע אינו מהווה תחליף לייעוץ או שיווק השקעות המתחשב בנתונים ובצרכים המיוחדים של כל אדם. יש לקרוא בעיון את מסמכי ההנפקה לפני קבלת החלטת השקעה.</p>
+                <p>עדכון אחרון: אוקטובר 2025</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bank Logos Carousel (Exact from main site) -->
+    <section class="foundations" id="foundations">
+        <div class="wrap">
+            <div class="foundations_in">
+                <div class="foundations_logos">
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-1@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-2@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-3@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-4@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-5@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-6@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-7@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-8@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-9@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-10@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-11@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-12@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-13@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-14@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-15@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-16@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-17@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-18@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-19@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-20@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-21@2x.png" alt=""></div>
+                    <div class="logos_item"><img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-22@2x.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Original Footer -->
+    <footer class="footer">
+        <div class="footer_box">
+            <div class="f_item f_item1">
+                <nav class="f_menu">
+                    <ul>
+                        <li><a href="https://movne.co.il/products/">מוצרים מובנים</a></li>
+                        <li><a href="https://movne.co.il/about/">מי אנחנו?</a></li>
+                        <li><a href="https://movne.co.il/blog/">כתבות</a></li>
+                        <li><a href="https://movne.co.il/contact/">צרו קשר</a></li>
+                        <li><a href="https://movne.co.il/wp-content/uploads/2025/10/portal-final-corrected-1-1.html">פורטל למשקיעים כשירים</a></li>
+                    </ul>
+                </nav>
+                <nav class="f_menu">
+                    <ul>
+                        <li><a href="https://movne.co.il/privacy/">גילוי נאות</a></li>
+                        <li><a href="https://movne.co.il/accessibility/">הצהרת נגישות</a></li>
+                    </ul>
+                </nav>
+                <div class="f_about">
+                    <div class="text_cont text_short">
+                        <p>המוצרים מובנים של מובנה גלובל מונפקים על ידי הגופים הפיננסיים האיתנים ביותר בעולם. מה שמספק ביטחון נוסף למחזיקים בהם.</p>
+                        <p>למוצרים מובנים מגוון רחב של תשואות ותכונות שמאפשרות להתאים את ההשקעה בהם להעדפות האישיות של המשקיע.</p>
+                    </div>
+                    <a href="javascript: void(0);" class="read_more">קראו עוד</a>
+                </div>
+                <a href="javascript: void(0);" class="up_bt"></a>
+            </div>
+            <div class="f_item f_item2">
+                <div class="social">
+                    <a href="#" target="_blank">LinkedIn</a>
+                    <a href="#" target="_blank">Instagram</a>
+                    <a href="#" target="_blank">Telegram</a>
+                    <a href="#" target="_blank">TikTok</a>
+                </div>
+                <a href="mailto:info@movne.co.il" class="email">info@movne.co.il</a>
+                <div class="copy">© כל הזכויות שמורות למובנה בע״מ</div>
+                <div class="dev">
+                    <span class="text">webdev</span>
+                    <a href="https://oribsn.dev" target="_blank" title="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                        <span class="name">oribsn</span>
+                        <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/ori.webp" alt="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                    </a>
+                </div>
+                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/logo.svg" alt="Movne Global" class="logo">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Meet Section -->
+    <section class="meet sec_pd" id="meet">
+        <div class="meet_box">
+            <div class="meet_head">
+                <div class="meet_title">
+                    <strong>בואו ניפגש!</strong>
+                    תאמו פגישת היכרות
+                </div>
+                <div class="meet_text">
+                    בחרו את סוג הפגישה והמועד הנוח
+                    ביותר עבורכם, אנו נשלח לכם זימון
+                    במייל ונתקשר מולכם בוואטסאפ
+                </div>
+            </div>
+            <div class="meet_form">
+                <div class="meet_links">
+                    <a href="javascript: void(0);" class="meet_link" data-type="zoom">Zoom</a>
+                    <a href="javascript: void(0);" class="meet_link" data-type="phone">בטלפון</a>
+                    <a href="javascript: void(0);" class="meet_link" data-type="office">אצלנו במשרד</a>
+                </div>
+                <div class="meet_or">
+                    או שפשוט
+                    <a href="javascript: void(0);" class="meet_link" data-type="contact">תשאירו כאן</a>
+                    פרטים ונחזור אליכם בטלפון
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Original Scripts -->
+    <script src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick.min.js"></script>
+    <script src="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/modal_video/jquery-modal-video.min.js"></script>
+    <script src="https://movne.co.il/wp-content/themes/oribsn/assets/js/main.js?v=1758004795"></script>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <script>
+        console.log('Professional Portal Page 2 - Complete with Bank Logos');
+
+        // Initialize Bank Logos Carousel with proper timing
+        (function($) {
+            $(window).on('load', function(){
+                if (typeof $.fn.slick !== 'undefined') {
+                    $('.logos_items').slick({
+                        slidesToShow: 12,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 0,
+                        speed: 2000,
+                        cssEase: 'linear',
+                        infinite: true,
+                        arrows: false,
+                        dots: false,
+                        pauseOnHover: false,
+                        pauseOnFocus: false,
+                        rtl: true,
+                        responsive: [{
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        }]
+                    });
+                    console.log('Bank logos carousel initialized');
+                } else {
+                    console.error('Slick carousel not loaded');
+                }
+            });
+        })(jQuery);
+    </script>
+
+</body>
+</html>

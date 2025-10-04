@@ -1,0 +1,3 @@
+@echo off
+echo Opening Portal Page 3...
+start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" "file:///C:/Users/Aviad/Desktop/web-movne/portal-page-3.html"

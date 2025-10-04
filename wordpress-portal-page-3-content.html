@@ -1,0 +1,750 @@
+<style>
+        /* === PROFESSIONAL TOP BANNER === */
+        .exclusive-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #152135 0%, #34394d 50%, #152135 100%);
+            color: #ffffff;
+            padding: 12px 20px;
+            text-align: center;
+            z-index: 10000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Simona', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #ff9d0a;
+        }
+
+        .exclusive-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 157, 10, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .exclusive-banner-text {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exclusive-banner-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #ff9d0a;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .exclusive-banner-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border-radius: 50%;
+        }
+
+        /* Adjust body and header for banner space */
+        body.has-banner {
+            padding-top: 50px;
+        }
+
+        body.has-banner .header {
+            top: 50px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .exclusive-banner {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+
+            body.has-banner {
+                padding-top: 44px;
+            }
+
+            body.has-banner .header {
+                top: 44px;
+            }
+
+            .exclusive-banner-icon {
+                width: 16px;
+                height: 16px;
+            }
+
+            .exclusive-banner-icon::after {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        /* === PAGE 2 SPECIFIC CONTENT === */
+        .portal-hero {
+            background: linear-gradient(
+                135deg, 
+                rgba(21, 33, 53, 0.92) 0%, 
+                rgba(52, 57, 77, 0.88) 50%, 
+                rgba(34, 34, 34, 0.92) 100%
+            ),
+            url('https://movne.co.il/wp-content/uploads/2025/09/Group-206-8-scaled.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            padding: 0 32px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            opacity: 0.95;
+            line-height: 1.4;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Investment cards styling - matching main site */
+        .investment-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Main site matching content sections */
+        .content-section {
+            background: #ffffff;
+            padding: 4rem 0;
+            margin-top: -1px;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .investment-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 2rem;
+            color: #152135;
+            text-align: center;
+            border: 1px solid rgba(255, 157, 10, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(21, 33, 53, 0.12);
+        }
+
+        .investment-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 32px rgba(21, 33, 53, 0.16);
+            border-color: rgba(255, 157, 10, 0.2);
+        }
+
+        .investment-card h3 {
+            color: #ff9d0a;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .investment-card p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            background: #ff9d0a;
+            color: #ffffff;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(255, 157, 10, 0.25);
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 157, 10, 0.4);
+            background: #222222;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .navigation-section {
+            text-align: center;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            color: #ff9d0a;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 24px;
+            border: 2px solid #ff9d0a;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-button:hover {
+            background: #ff9d0a;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(255, 157, 10, 0.25);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .portal-hero {
+                min-height: 50vh;
+                background-attachment: scroll;
+            }
+            
+            .hero-content {
+                padding: 0 1rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content .subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .investment-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+<style>
+        .current-page {
+            color: #ff9d0a !important;
+            font-weight: bold;
+            cursor: default;
+        }
+    </style>
+<style>
+        /* EXACT animation and hover effects from main site */
+        @keyframes scroll-logos {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Main site matching hover effects */
+        .meet_item:hover {
+            background: rgb(10, 35, 140) !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile responsiveness for exact design */
+        @media (max-width: 768px) {
+            .meet_meet {
+                width: 90% !important;
+                height: auto !important;
+            }
+            
+            .meet_meet_out {
+                padding: 40px 30px !important;
+            }
+            
+            .meet_item {
+                font-size: 24px !important;
+                padding: 15px 30px 15px 0px !important;
+            }
+        }
+    </style>
+
+<!-- Professional Exclusive Banner -->
+    <div class="exclusive-banner">
+        <div class="exclusive-banner-text">
+            <span class="exclusive-banner-icon"></span>
+            <span>פורטל למשקיעים כשירים - עמוד 3</span>
+            <span class="exclusive-banner-icon"></span>
+        </div>
+    </div>
+    
+    <!-- Website Header - EXACT COPY -->
+    <header class="header">
+        <div class="head_in">
+            <div class="logo_wrap head_logo">
+                <a href="https://movne.co.il/">
+                    <img class="logo_black" src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne Global">
+                </a>
+            </div>
+            <div class="head_menu_wrap no_m">
+                <nav class="main_menu" id="main_menu">
+                    <ul class="frow">
+                        <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                        <li class="mitem mitem_44">
+                            <a href="https://movne.co.il/">בית</a>
+                        </li>
+                        <li class="mitem mitem_46 ">
+                            <a href="https://movne.co.il/products/">מוצרים מובנים</a>
+                        </li>
+                        <li class="mitem mitem_47 ">
+                            <a href="https://movne.co.il/about/">מי אנחנו?</a>
+                        </li>
+                        <li class="mitem mitem_45 ">
+                            <a href="https://movne.co.il/blog/">כתבות</a>
+                        </li>
+                        <li class="mitem mitem_48 ">
+                            <a href="https://movne.co.il/contact/">צרו קשר</a>
+                        </li>
+                        <li class="mitem mitem_910 current">
+                            <a href="https://movne.co.il/wp-content/uploads/2025/09/portal-final-corrected-1.html" class="current-page">פורטל למשקיעים כשירים</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bt_menu m_only"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+        <div class="head_sticky">
+            <div class="logo_wrap head_logo">
+                <a href="https://movne.co.il/">
+                    <img src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne Global">
+                </a>
+            </div>
+            <div class="head_menu_wrap no_m">
+                <nav class="main_menu" id="main_menu_s">
+                    <ul class="frow">
+                        <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                        <li class="mitem mitem_44 mitemmtoptc">
+                            <a href="https://movne.co.il/">בית</a>
+                        </li>
+                        <li class="mitem mitem_46 mitemmtoptc">
+                            <a href="https://movne.co.il/products/">מוצרים מובנים</a>
+                        </li>
+                        <li class="mitem mitem_47 mitemmtoptc">
+                            <a href="https://movne.co.il/about/">מי אנחנו?</a>
+                        </li>
+                        <li class="mitem mitem_45 mitemmtoptc">
+                            <a href="https://movne.co.il/blog/">כתבות</a>
+                        </li>
+                        <li class="mitem mitem_48 mitemmtoptc">
+                            <a href="https://movne.co.il/contact/">צרו קשר</a>
+                        </li>
+                        <li class="mitem mitem_910 mitemmtoptc current">
+                            <a href="https://movne.co.il/wp-content/uploads/2025/09/portal-final-corrected-1.html" class="current-page">פורטל למשקיעים כשירים</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bt_menu m_only"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+        <div class="head_menu_wrap m_only">
+            <div class="logo_wrap head_logo">
+                <a href="https://movne.co.il/">
+                    <img class="logo_black" src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne Global">
+                </a>
+            </div>
+            <nav class="main_menu" id="main_menu_s">
+                <ul class="frow">
+                    <li class="mitem mitem_44 mitemmtoptc">
+                        <a href="https://movne.co.il/">בית</a>
+                    </li>
+                    <li class="mitem mitem_46 mitemmtoptc">
+                        <a href="https://movne.co.il/products/">מוצרים מובנים</a>
+                    </li>
+                    <li class="mitem mitem_47 mitemmtoptc">
+                        <a href="https://movne.co.il/about/">מי אנחנו?</a>
+                    </li>
+                    <li class="mitem mitem_45 mitemmtoptc">
+                        <a href="https://movne.co.il/blog/">כתבות</a>
+                    </li>
+                    <li class="mitem mitem_48 mitemmtoptc">
+                        <a href="https://movne.co.il/contact/">צרו קשר</a>
+                    </li>
+                    <li class="mitem mitem_910 mitemmtoptc current">
+                        <a href="https://movne.co.il/wp-content/uploads/2025/09/portal-final-corrected-1.html" class="current-page">פורטל למשקיעים כשירים</a>
+                    </li>
+                    <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                </ul>
+            </nav>
+            <div class="bt_menu"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+    </header>
+
+    <!-- Page 2 Hero Section -->
+    <section class="portal-hero">
+        <div class="hero-content">
+            <h1>שירותי השקעות מובנים</h1>
+            <div class="subtitle">מגוון שירותים פיננסיים מתקדמים למשקיעים כשירים</div>
+            
+            <!-- Services Cards -->
+            <div class="investment-cards">
+                <div class="investment-card">
+                    <h3>מוצרים מובנים</h3>
+                    <p>מוצרים פיננסיים מתוחכמים הכוללים אופציות, חוזים עתידיים ונגזרים מתקדמים המותאמים לצרכים האישיים של כל משקיע.</p>
+                    <button class="cta-button" onclick="alert('פונקציונליות פעילה! קישור לקטלוג מוצרים מובנים.')">צפה במוצרים</button>
+                </div>
+                
+                <div class="investment-card">
+                    <h3>ניהול תיקים</h3>
+                    <p>ניהול מקצועי של תיקי השקעות עם התאמה אישית לצרכי הלקוח ופרופיל הסיכון האישי שלו.</p>
+                    <button class="cta-button" onclick="alert('פונקציונליות פעילה! קישור לשירותי ניהול תיקים.')">נהל תיק</button>
+                </div>
+
+                <div class="investment-card">
+                    <h3>ייעוץ אסטרטגי</h3>
+                    <p>ייעוץ השקעות מותאם אישית על בסיס ניתוח מעמיק של השוק והמגמות הכלכליות העדכניות ביותר.</p>
+                    <button class="cta-button" onclick="alert('פונקציונליות פעילה! קישור לייעוץ אסטרטגי.')">קבל ייעוץ</button>
+                </div>
+
+                <div class="investment-card">
+                    <h3>ניתוח סיכונים</h3>
+                    <p>הערכת סיכונים מתקדמת וכלים לחיזוי ובקרת סיכונים פיננסיים המבוססים על נתונים ואלגוריתמים מתקדמים.</p>
+                    <button class="cta-button" onclick="alert('פונקציונליות פעילה! קישור לכלי ניתוח סיכונים מתקדם.')">נתח סיכונים</button>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div style="background: rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 3rem 2rem; margin: 3rem 0; text-align: center;">
+                <h2 style="color: #ff9d0a; font-size: 2.5rem; margin-bottom: 2rem; font-weight: 700;">הנתונים שלנו</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div>
+                        <div style="font-size: 3rem; font-weight: 700; color: #ff9d0a; margin-bottom: 0.5rem;">500M+</div>
+                        <p style="font-size: 1.25rem; margin: 0;">נכסים מנוהלים</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; font-weight: 700; color: #ff9d0a; margin-bottom: 0.5rem;">1,200+</div>
+                        <p style="font-size: 1.25rem; margin: 0;">לקוחות פעילים</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; font-weight: 700; color: #ff9d0a; margin-bottom: 0.5rem;">15+</div>
+                        <p style="font-size: 1.25rem; margin: 0;">שנות ניסיון</p>
+                    </div>
+                    <div>
+                        <div style="font-size: 3rem; font-weight: 700; color: #ff9d0a; margin-bottom: 0.5rem;">98%</div>
+                        <p style="font-size: 1.25rem; margin: 0;">שביעות רצון לקוחות</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div style="background: rgba(255, 157, 10, 0.1); border-radius: 24px; padding: 3rem 2rem; margin: 3rem 0;">
+                <h2 style="color: #ff9d0a; font-size: 2rem; margin-bottom: 2rem; font-weight: 700; text-align: center;">צרו קשר</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: right;">
+                    <div>
+                        <h3 style="color: #ff9d0a; font-size: 1.5rem; margin-bottom: 1rem;">פרטי התקשרות</h3>
+                        <p style="margin: 0.5rem 0;"><strong>אימייל:</strong> info@movne.co.il</p>
+                        <p style="margin: 0.5rem 0;"><strong>טלפון:</strong> 03-1234567</p>
+                        <p style="margin: 0.5rem 0;"><strong>פקס:</strong> 03-1234568</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #ff9d0a; font-size: 1.5rem; margin-bottom: 1rem;">כתובת משרדינו</h3>
+                        <p style="margin: 0.5rem 0;">רחוב הארבעה 15</p>
+                        <p style="margin: 0.5rem 0;">תל אביב-יפו 6473915</p>
+                        <p style="margin: 0.5rem 0;">ישראל</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="cta-button" onclick="alert('פונקציונליות פעילה! קישור לטופס יצירת קשר.')">בואו נדבר!</button>
+                </div>
+            </div>
+            
+            <!-- Navigation Section -->
+            <div class="navigation-section">
+                <div class="nav-buttons">
+                    <a href="javascript:history.back()" class="nav-button">← חזור אחורה</a>
+                    <a href="https://movne.co.il/wp-content/uploads/2025/09/portal-final-corrected-1.html" class="nav-button">פורטל ראשי</a>
+                    <a href="portal-page-2-EXACT.html" class="nav-button">עמוד קודם ←</a>
+                    <a href="javascript:history.forward()" class="nav-button">קדימה →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Content Section - Matching Main Site Structure -->
+    <section class="content-section">
+        <div class="content-wrapper">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; color: #152135; margin-bottom: 1rem; font-weight: 700;">🎯 מתודולוגיית ההשקעה</h2>
+                <p style="font-size: 1.25rem; color: #666; max-width: 800px; margin: 0 auto; line-height: 1.6;">גישה מקצועית ומותאמת אישית לכל משקיע המבוססת על עקרונות השקעה מוכחים</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 3rem 0;">
+                <div style="text-align: center; padding: 2rem; background: rgba(255, 157, 10, 0.05); border-radius: 16px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                    <h3 style="color: #ff9d0a; font-size: 1.5rem; margin-bottom: 1rem;">ניתוח מעמיק</h3>
+                    <p style="color: #666; line-height: 1.6;">בחינה יסודית של השוק והזדמנויות ההשקעה הזמינות</p>
+                </div>
+                
+                <div style="text-align: center; padding: 2rem; background: rgba(0, 115, 170, 0.05); border-radius: 16px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚖️</div>
+                    <h3 style="color: #0073aa; font-size: 1.5rem; margin-bottom: 1rem;">איזון סיכונים</h3>
+                    <p style="color: #666; line-height: 1.6;">פיזור מושכל להשגת איזון אופטימלי בין תשואה לסיכון</p>
+                </div>
+                
+                <div style="text-align: center; padding: 2rem; background: rgba(21, 33, 53, 0.05); border-radius: 16px;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                    <h3 style="color: #152135; font-size: 1.5rem; margin-bottom: 1rem;">מעקב צמוד</h3>
+                    <p style="color: #666; line-height: 1.6;">ניטור רציף של הביצועים וההתאמות הנדרשות</p>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #152135 0%, #34394d 100%); border-radius: 24px; padding: 3rem; text-align: center; color: white; margin: 3rem 0;">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #ff9d0a;">מוכנים להתחיל?</h3>
+                <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">בואו נקבע פגישת ייעוץ אישית ונבנה יחד את אסטרטגיית ההשקעה שלכם</p>
+                <a href="#meet" class="cta-button" style="display: inline-block; text-decoration: none; background: #ff9d0a;">בואו נדבר!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXACT Meeting Section from Main Site - Blue Square -->
+    <div class="meet_meet" style="background: rgb(23, 73, 255); width: 609.5px; height: 585.953px; margin: 4rem auto; position: relative;">
+        <div class="meet_meet_out" style="padding: 96px 86px;">
+            <div class="meet_meet_title" style="margin-bottom: 2rem;">
+                <h2 style="color: white; font-size: 2.5rem; font-weight: 700; text-align: center; margin: 0;">איך תעדיפו להיפגש?</h2>
+            </div>
+            <div class="meet_items" style="display: flex; flex-direction: column; gap: 18.992px;">
+                <a class="meet_item zoom" data-meet-type="zoom" style="background: rgb(15, 49, 173); color: rgb(255, 255, 255); border-radius: 10px; padding: 20px 56px 20px 0px; font-family: Simona, sans-serif; font-size: 30px; font-weight: 400; text-align: right; cursor: pointer; text-decoration: none; display: block; transition: all 0.3s ease;" href="javascript: void(0);">Zoom</a>
+                <a class="meet_item phone" data-meet-type="phone" style="background: rgb(15, 49, 173); color: rgb(255, 255, 255); border-radius: 10px; padding: 20px 56px 20px 0px; font-family: Simona, sans-serif; font-size: 30px; font-weight: 400; text-align: right; cursor: pointer; text-decoration: none; display: block; transition: all 0.3s ease;" href="javascript: void(0);">בטלפון</a>
+                <a class="meet_item office" data-meet-type="office" style="background: rgb(15, 49, 173); color: rgb(255, 255, 255); border-radius: 10px; padding: 20px 56px 20px 0px; font-family: Simona, sans-serif; font-size: 30px; font-weight: 400; text-align: right; cursor: pointer; text-decoration: none; display: block; transition: all 0.3s ease;" href="javascript: void(0);">אצלנו במשרד</a>
+            </div>
+            <div class="meet_form_tx" style="color: white; text-align: center; margin-top: 2rem; font-size: 18px;">או שפשוט <a href="javascript: void(0);" data-meet-type="contact" style="color: white; text-decoration: underline;">תשאירו כאן</a> פרטים ונחזור אליכם בטלפון</div>
+        </div>
+    </div>
+
+    <!-- EXACT Bank Logos Section from Main Site - Moving Animation -->
+    <div class="logos_items" style="overflow: hidden; padding: 3rem 0; background: #ffffff;">
+        <div style="display: flex; align-items: center; animation: scroll-logos 20s linear infinite; white-space: nowrap;">
+            <!-- All 22 exact logos from main site - First set -->
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-1@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-2@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-3@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-4@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-5@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-6@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-7@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-8@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-9@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-10@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-11@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-12@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-13@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-14@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-15@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-16@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-17@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-18@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-19@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-20@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-21@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-22@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            
+            <!-- Duplicate set for seamless infinite scroll -->
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-1@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-2@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-3@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-4@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-5@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-6@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-7@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-8@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-9@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-10@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-11@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-12@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-13@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-14@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-15@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-16@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-17@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-18@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-19@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-20@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-21@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+            <img src="https://movne.co.il/wp-content/uploads/2024/11/Asset-22@2x.png" style="width: 106px; height: auto; margin: 0 20px; object-fit: fill;">
+        </div>
+    </div>
+
+    <style>
+        /* EXACT animation and hover effects from main site */
+        @keyframes scroll-logos {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Main site matching hover effects */
+        .meet_item:hover {
+            background: rgb(10, 35, 140) !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Mobile responsiveness for exact design */
+        @media (max-width: 768px) {
+            .meet_meet {
+                width: 90% !important;
+                height: auto !important;
+            }
+            
+            .meet_meet_out {
+                padding: 40px 30px !important;
+            }
+            
+            .meet_item {
+                font-size: 24px !important;
+                padding: 15px 30px 15px 0px !important;
+            }
+        }
+    </style>
+
+    <!-- Website Footer - EXACT COPY FROM ORIGINAL -->
+    <footer class="footer">
+        <div class="ft_top">
+            <div class="wrap">
+                <div class="ft_top_in">
+                    <div class="ft_col ft_col_1">
+                        <nav class="ft_menu" id="ft_menu">
+                            <ul>
+                                <li class="ftmitem mitem_51 "><a href="https://movne.co.il/products/">מוצרים מובנים</a></li>
+                                <li class="ftmitem mitem_52 "><a href="https://movne.co.il/about/">מי אנחנו?</a></li>
+                                <li class="ftmitem mitem_50 "><a href="https://movne.co.il/blog/">כתבות</a></li>
+                                <li class="ftmitem mitem_53 "><a href="https://movne.co.il/contact/">צרו קשר</a></li>
+                                <li class="ftmitem mitem_897 "><a href="https://movne.co.il/%d7%94%d7%a6%d7%94%d7%a8%d7%aa-%d7%9e%d7%a9%d7%a7%d7%99%d7%a2-%d7%9b%d7%a9%d7%99%d7%a8-2/">פורטל למשקיעים כשירים</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ft_col ft_col_2">
+                        <nav class="ft_menu" id="ft_menu">
+                            <ul>
+                                <li class="ftmitem mitem_667 "><a href="https://movne.co.il/privacy/">גילוי נאות</a></li>
+                                <li class="ftmitem mitem_64 "><a href="https://movne.co.il/accessibility/">הצהרת נגישות</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="ft_col ft_col_3">
+                        <div class="ft_tx">המוצרים מובנים של מובנה גלובל מונפקים על ידי הגופים הפיננסיים האיתנים ביותר בעולם. מה שמספק ביטחון נוסף למחזיקים בהם. זה מאפשר פיזור רחב של הנכסים ולא מגביל את ההשקעה לבנקים מקומיים בלבד. האמינות והביטחון שמספקים הגופים... <br>
+המוצרים מובנים של מובנה גלובל מונפקים על ידי הגופים הפיננסיים האיתנים ביותר בעולם. מה שמספק ביטחון נוסף למחזיקים בהם.<br>
+למוצרים מובנים מגוון רחב של תשואות ותכונות שמאפשרות להתאים את ההשקעה בהם להעדפות האישיות של המשקיע.</div>
+                        <div class="more"><a href="javascript: void(0);">קראו עוד</a></div>
+                    </div>
+                    <div class="uparr"><a href="javascript: void(0);"></a></div>
+                </div>
+            </div>	
+        </div>
+        <div class="ft_bottom">
+            <div class="wrap">
+                <div class="ft_bottom_in">
+                    <div class="ft_col ft_col_1">
+                        <div class="ft_soc soc_items">
+                            <a class="linkedin" href="#" target="_blank" aria-label="LinkedIn"></a>
+                            <a class="instagram" href="#" target="_blank" aria-label="Instagram"></a>
+                            <a class="telegram" href="#" target="_blank" aria-label="Telegram"></a>
+                            <a class="tiktok" href="#" target="_blank" aria-label="TikTok"></a>
+                        </div>
+                    </div>
+                    <div class="ft_col ft_col_2">
+                        <div class="ft_email">
+                            <a class="email" href="mailto:info@movne.co.il" target="_blank">info@movne.co.il</a>
+                        </div>
+                    </div>
+                    <div class="ft_col ft_col_3 no_m">
+                        <div class="ft_rights">© כל הזכויות שמורות למובנה בע״מ</div>
+                    </div>
+                    <div class="ft_col ft_col_4 no_m">
+                        <div class="creds">
+                            <span>webdev</span>
+                            <a href="https://oribsn.dev" target="_blank">
+                                <span>oribsn</span>
+                                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/svg/oribsn.svg" alt="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה" title="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ft_logo">
+                        <img src="https://movne.co.il/wp-content/uploads/2024/09/ft_logo.svg" alt="Movne Global">
+                    </div>
+                    <div class="ft_rights m_only">© כל הזכויות שמורות למובנה בע״מ</div>
+                    <div class="creds_wrap m_only">
+                        <div class="creds">
+                            <span>webdev</span>
+                            <a href="https://oribsn.dev" target="_blank">
+                                <span>oribsn</span>
+                                <img src="https://movne.co.il/wp-content/themes/oribsn/assets/img/svg/oribsn.svg" alt="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה" title="אורי בן-סימון - מומחה וורדפרס ומפתח full stack מנוסה">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Website Scripts - EXACT COPY FROM ORIGINAL -->
