@@ -70,7 +70,10 @@
       "Bash(claude --resume)",
       "Bash(del \"C:\\Users\\Aviad\\Desktop\\web-movne\\portal-page-2-PROFESSIONAL.html\")",
       "Bash(rm:*)",
-      "mcp__playwright__browser_close"
+      "mcp__playwright__browser_close",
+      "Bash(timeout:*)",
+      "Bash(start notepad wordpress-portal-upload-content.html)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []
