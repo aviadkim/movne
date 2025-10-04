@@ -2254,6 +2254,7 @@
             if (modal) {
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling
+                console.log('Modal opened:', productId);
             }
         }
 
@@ -2261,7 +2262,8 @@
             const modal = document.getElementById(productId + 'Modal');
             if (modal) {
                 modal.classList.remove('active');
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
+                document.body.style.overflow = ''; // Reset to default (not 'auto')
+                console.log('Modal closed:', productId);
             }
         }
 
@@ -2271,7 +2273,8 @@
             modals.forEach(modal => {
                 if (event.target === modal) {
                     modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
+                    document.body.style.overflow = ''; // Reset to default
+                    console.log('Modal closed by outside click');
                 }
             });
         }
@@ -2282,8 +2285,9 @@
                 const modals = document.querySelectorAll('.product-modal.active');
                 modals.forEach(modal => {
                     modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
+                    document.body.style.overflow = ''; // Reset to default
                 });
+                console.log('Modal closed by Escape key');
             }
         });
     </script>
