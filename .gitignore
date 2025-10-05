@@ -11,4 +11,5 @@ Thumbs.db
 .env.production.local
 credentials.json
 config.json
-secrets/
+secrets/nul
+movne-local-dev/html/*%d7%*

@@ -73,7 +73,8 @@
       "mcp__playwright__browser_close",
       "Bash(timeout:*)",
       "Bash(start notepad wordpress-portal-upload-content.html)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he-IL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta id="viewport" name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1" />
+    <title>הצהרת משקיע כשיר — תצוגה מקומית</title>
+    <!-- Load live Oribsn theme CSS for pixel-parity -->
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/rtl.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick.css" />
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/assets/js/lib/modal_video/modal-video.min.css" />
+    <link rel="stylesheet" href="https://movne.co.il/wp-content/themes/oribsn/style.css" />
+    <style>
+      /* Local preview helper styles (non-intrusive) */
+      .demo-hero {
+        position: relative; min-height: 48vh; display:flex; align-items:center; justify-content:center; overflow:hidden;
+      }
+      .demo-hero .bg_im { position:absolute; inset:0; z-index:1; }
+      .demo-hero .bg_im img { width:100%; height:100%; object-fit:cover; }
+      .demo-hero .wrap { position:relative; z-index:2; }
+      .demo-hero .main_title { color:#fff; text-align:center; text-shadow:0 6px 18px rgba(0,0,0,.45); }
+
+      /* Extracted core styling for current Movne questionnaire (trimmed for preview) */
+      :root {
+        --movne-navy:#162135; --movne-blue:#1749FF; --movne-sky:#3b82f6; --movne-gray:#94a3b8;
+        --space-xs:8px; --space-sm:12px; --space-md:16px; --space-lg:24px; --space-xl:32px;
+        --radius:14px; --shadow:0 20px 60px rgba(0,0,0,0.18);
+      }
+      .movne-investor-form, .movne-investor-form * { box-sizing:border-box; font-family: 'Heebo', Arial, sans-serif; }
+      .movne-investor-form { max-width: 75%; width:75%; margin:40px auto; background:#fff; border-radius:16px; box-shadow:var(--shadow); border:1px solid #e5e7eb; }
+      .movne-header { background: linear-gradient(135deg, var(--movne-sky), var(--movne-blue)); color:#fff; padding: var(--space-xl); text-align:center; }
+      .movne-header h1 { margin:0 0 var(--space-sm) 0; font-size: 32px; }
+      .movne-header .subtitle { opacity:.95; margin:0 0 var(--space-xs) 0; }
+      .movne-progress-bar { height:8px; background:#eef2f7; margin: var(--space-lg); border-radius:999px; overflow:hidden; }
+      .movne-progress-fill { height:100%; width:0; background: linear-gradient(90deg, var(--movne-blue), var(--movne-sky)); transition: width .3s ease; }
+      .movne-form-content { padding: var(--space-xl); }
+      .movne-section { background:#f8fafc; border:1px solid #e9ecef; border-radius: var(--radius); padding: var(--space-xl); margin-bottom: var(--space-xl); }
+      .movne-section h2 { display:flex; align-items:center; gap: var(--space-sm); margin:0 0 var(--space-md) 0; font-size: 20px; color:#0f172a; }
+      .movne-section-number { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:#1749FF; color:#fff; font-weight:700; }
+      .movne-form-grid { display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+      .movne-form-group label { display:block; margin-bottom:6px; font-weight:600; color:#495057; }
+      .movne-form-group input, .movne-form-group select { width:100%; padding:12px 14px; border:2px solid #ced4da; border-radius:8px; font-size:16px; background:#fff; }
+      .movne-form-group input:focus, .movne-form-group select:focus { outline:none; border-color:#1749FF; box-shadow:0 0 0 3px rgba(23,73,255,.1); }
+      .movne-criteria-grid { display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+      .movne-checkbox-item { display:flex; gap:12px; padding:14px; border:1px solid #e5e7eb; border-radius:10px; background:#fff; }
+      .movne-checkbox-content small { color:#64748b; }
+      .movne-info-box { background:#eef2ff; border:1px solid #c7d2fe; border-radius:10px; padding: var(--space-md); margin-bottom: var(--space-md); }
+      .movne-btn { appearance:none; border:none; border-radius:12px; padding:14px 18px; font-weight:700; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease; }
+      .movne-btn-primary { width:100%; background: linear-gradient(135deg, #007cba, #004066); color:#fff; box-shadow: 0 6px 20px rgba(0,124,186,.3); }
+      .movne-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,124,186,.4); }
+      .movne-success-message { display:none; background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; border-radius:10px; padding: var(--space-md); text-align:center; font-weight:600; }
+      /* Signature */
+      .movne-signature-section { background:#fff; border:1px dashed #cbd5e1; border-radius:12px; padding: var(--space-md); }
+      #movne-signature-canvas { width:100%; height:180px; background:#fff; border-radius:8px; border: 2px solid #e2e8f0; }
+      .movne-signature-controls { display:flex; justify-content:flex-end; gap: var(--space-sm); margin-top: var(--space-sm); }
+      .movne-signature-status { margin-top: var(--space-sm); font-size: 14px; color:#64748b; }
+      .movne-signature-status.signed { color:#047857; font-weight:700; }
+
+      @media(max-width: 900px){ .movne-form-grid, .movne-criteria-grid { grid-template-columns: 1fr; } .movne-investor-form{max-width:92%;width:92%;} }
+    </style>
+  </head>
+  <body class="rtl page wp-singular wp-theme-oribsn">
+    <div id="page" class="site">
+      <!-- Header (static preview) -->
+      <header class="header">
+        <div class="head_in">
+          <div class="logo_wrap head_logo">
+            <a href="#"><img class="logo_black" src="https://movne.co.il/wp-content/uploads/2024/09/logo.svg" alt="Movne" /></a>
+          </div>
+          <div class="head_menu_wrap no_m">
+            <nav class="main_menu" id="main_menu">
+              <ul class="frow">
+                <li class="mitem mitem_bt s_bt"><a href="#meet">בואו נדבר!</a></li>
+                <li class="mitem"><a href="#">בית</a></li>
+                <li class="mitem"><a href="#">מוצרים מובנים</a></li>
+                <li class="mitem"><a href="#">מי אנחנו?</a></li>
+                <li class="mitem"><a href="#">כתבות</a></li>
+                <li class="mitem"><a href="#">צרו קשר</a></li>
+                <li class="mitem current"><a href="#">הצהרת משקיע כשיר</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="bt_menu m_only"><a href="javascript: void(0);"><span></span><span></span><span></span></a></div>
+        </div>
+      </header>
+
+      <div id="content" class="site-content">
+        <!-- Hero band (like Home) -->
+        <section class="top sec_bg demo-hero" id="top">
+          <div class="bg_im">
+            <img class="no_m" src="https://movne.co.il/wp-content/uploads/2024/12/hero-bg.svg" alt="" />
+          </div>
+          <div class="wrap wrap_top">
+            <h1 class="main_title">הצהרת משקיע כשיר</h1>
+          </div>
+        </section>
+
+        <!-- Current questionnaire (embedded locally) -->
+        <main class="main">
+          <div class="page_wrap">
+            <div class="movne-investor-form">
+              <div class="movne-header">
+                <h1>הצהרת משקיע כשיר</h1>
+                <p class="subtitle">טופס מאובטח ונגיש לאימות כשירות</p>
+                <p class="company">מובנה גלובל בע"מ</p>
+              </div>
+
+              <div class="movne-progress-bar" role="progressbar" aria-label="התקדמות מילוי הטופס">
+                <div class="movne-progress-fill" id="movne-progress-fill"></div>
+              </div>
+
+              <div class="movne-form-content">
+                <div id="movne-success-message" class="movne-success-message">✅ ההצהרה נשלחה בהצלחה! (תצוגה מקומית)</div>
+
+                <form id="movne-investor-form" novalidate>
+                  <section class="movne-section">
+                    <h2><span class="movne-section-number">1</span>פרטים אישיים</h2>
+                    <div class="movne-form-grid">
+                      <div class="movne-form-group">
+                        <label for="movne-full-name">שם מלא<span class="movne-required">*</span></label>
+                        <input type="text" id="movne-full-name" name="full_name" required />
+                      </div>
+                      <div class="movne-form-group">
+                        <label for="movne-id-number">מספר תעודת זהות<span class="movne-required">*</span></label>
+                        <input type="text" id="movne-id-number" name="id_number" pattern="[0-9]{9}" maxlength="9" required />
+                      </div>
+                    </div>
+                    <div class="movne-form-group">
+                      <label for="movne-email">כתובת דוא"ל<span class="movne-required">*</span></label>
+                      <input type="email" id="movne-email" name="email" required />
+                    </div>
+                    <div class="movne-form-group">
+                      <label for="movne-address">כתובת מגורים<span class="movne-required">*</span></label>
+                      <input type="text" id="movne-address" name="address" required />
+                    </div>
+                  </section>
+
+                  <section class="movne-section">
+                    <h2><span class="movne-section-number">2</span>קריטריונים לכשירות משקיע כשיר</h2>
+                    <div class="movne-info-box">
+                      <h3>הגדרת משקיע כשיר לפי חוק ניירות ערך</h3>
+                      <p>בחר תנאי/תנאים המתקיימים לגביך (לפחות אחד):</p>
+                    </div>
+                    <div class="movne-criteria-grid">
+                      <label class="movne-checkbox-item"><input type="checkbox" name="criteria[]" value="liquid_assets" />
+                        <div class="movne-checkbox-content"><strong>מבחן נכסים נזילים</strong><br/>שווי נכסים נזילים מעל ~9.4 מ׳ ₪</div>
+                      </label>
+                      <label class="movne-checkbox-item"><input type="checkbox" name="criteria[]" value="individual_income" />
+                        <div class="movne-checkbox-content"><strong>הכנסה שנתית (יחיד)</strong><br/>הכנסה ברוטו מעל 1.3 מ׳ ₪ בשנתיים האחרונות</div>
+                      </label>
+                      <label class="movne-checkbox-item"><input type="checkbox" name="criteria[]" value="household_income" />
+                        <div class="movne-checkbox-content"><strong>הכנסה שנתית (משק בית)</strong><br/>הכנסה ברוטו מעל 1.8 מ׳ ₪ בשנתיים האחרונות</div>
+                      </label>
+                    </div>
+                  </section>
+
+                  <section class="movne-section">
+                    <h2><span class="movne-section-number">3</span>אימות ע"י בעל רישיון (אופציונלי)</h2>
+                    <div class="movne-form-grid">
+                      <div class="movne-form-group">
+                        <label>שם המאשר</label>
+                        <input type="text" name="verifier_name" />
+                      </div>
+                      <div class="movne-form-group">
+                        <label>מספר רישיון</label>
+                        <input type="text" name="verifier_license" />
+                      </div>
+                      <div class="movne-form-group">
+                        <label>סוג בעל רישיון</label>
+                        <select name="verifier_type">
+                          <option value="">בחר</option>
+                          <option value="investment_advisor">יועץ השקעות</option>
+                          <option value="portfolio_manager">מנהל תיקים</option>
+                          <option value="investment_marketer">משווק השקעות</option>
+                        </select>
+                      </div>
+                      <div class="movne-form-group">
+                        <label>פרטי קשר</label>
+                        <input type="text" name="verifier_contact" />
+                      </div>
+                    </div>
+                  </section>
+
+                  <section class="movne-section">
+                    <h2><span class="movne-section-number">4</span>הצהרות ואישורים</h2>
+                    <div class="movne-form-group">
+                      <label><input type="checkbox" name="risk_agreement" value="yes" required /> אני מבין/ה את הסיכונים הכרוכים בהשקעות במוצרים פיננסיים.</label>
+                    </div>
+                    <div class="movne-form-group">
+                      <label><input type="checkbox" name="update_commitment" value="yes" required /> אני מתחייב/ת לעדכן במקרה של שינוי במעמדי כמשקיע כשיר.</label>
+                    </div>
+                    <div class="movne-form-group">
+                      <label><input type="checkbox" name="marketing_consent" value="yes" /> מאשר/ת קבלת עדכונים שיווקיים.</label>
+                    </div>
+                  </section>
+
+                  <section class="movne-section">
+                    <h2><span class="movne-section-number">5</span>חתימה דיגיטלית</h2>
+                    <div class="movne-signature-section">
+                      <canvas id="movne-signature-canvas" width="900" height="200"></canvas>
+                      <div class="movne-signature-controls">
+                        <button type="button" id="movne-clear-signature" class="movne-btn">נקה חתימה</button>
+                      </div>
+                      <div id="movne-signature-status" class="movne-signature-status">לא נחתם</div>
+                      <input type="hidden" id="movne-signature-data" name="digital_signature" />
+                      <div class="movne-form-group" style="margin-top: var(--space-md);">
+                        <label>תאריך חתימה</label>
+                        <input type="text" id="movne-signature-date" name="signature_date" readonly />
+                      </div>
+                    </div>
+                  </section>
+
+                  <button type="submit" class="movne-btn movne-btn-primary">שלח הצהרה</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <footer class="footer">
+        <div class="ft_top"><div class="wrap"><div class="ft_top_in">
+          <div class="ft_col ft_col_1"><nav class="ft_menu" id="ft_menu"><ul>
+            <li class="ftmitem"><a href="#">מוצרים מובנים</a></li>
+            <li class="ftmitem"><a href="#">מי אנחנו?</a></li>
+            <li class="ftmitem"><a href="#">כתבות</a></li>
+            <li class="ftmitem"><a href="#">צרו קשר</a></li>
+          </ul></nav></div>
+          <div class="ft_col ft_col_2"><nav class="ft_menu" id="ft_menu"><ul>
+            <li class="ftmitem"><a href="#">גילוי נאות</a></li>
+            <li class="ftmitem"><a href="#">הצהרת נגישות</a></li>
+          </ul></nav></div>
+          <div class="ft_col ft_col_3"><div class="ft_tx">תצוגה מקומית — הצהרת משקיע כשיר</div><div class="more"><a href="javascript:void(0)">קראו עוד</a></div><div class="uparr"><a href="javascript:void(0)"></a></div></div>
+        </div></div></div>
+      </footer>
+    </div>
+
+    <script>
+      // Signature pad (simplified)
+      class SimpleSignaturePad {
+        constructor(canvas){ this.canvas=canvas; this.ctx=canvas.getContext('2d'); this.drawing=false; this.init(); }
+        init(){
+          const c=this.canvas, r=c.getBoundingClientRect();
+          const pos=(e)=>{ const t=e.touches?e.touches[0]:e; const rect=c.getBoundingClientRect(); return {x:(t.clientX-rect.left)*(c.width/rect.width), y:(t.clientY-rect.top)*(c.height/rect.height)} };
+          const start=(e)=>{ this.drawing=true; const p=pos(e); this.ctx.lineWidth=2; this.ctx.lineCap='round'; this.ctx.strokeStyle='#0f172a'; this.ctx.beginPath(); this.ctx.moveTo(p.x,p.y); e.preventDefault(); };
+          const draw=(e)=>{ if(!this.drawing) return; const p=pos(e); this.ctx.lineTo(p.x,p.y); this.ctx.stroke(); e.preventDefault(); };
+          const stop=()=>{ if(!this.drawing) return; this.drawing=false; this._updated(); };
+          c.addEventListener('mousedown', start); c.addEventListener('mousemove', draw); c.addEventListener('mouseup', stop); c.addEventListener('mouseleave', stop);
+          c.addEventListener('touchstart', start, {passive:false}); c.addEventListener('touchmove', draw, {passive:false}); c.addEventListener('touchend', stop);
+        }
+        clear(){ this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height); this._updated(); }
+        isEmpty(){ const p=this.ctx.getImageData(0,0,this.canvas.width,this.canvas.height).data; return !p.some(v=>v!==0); }
+        _updated(){ const status=document.getElementById('movne-signature-status'); const input=document.getElementById('movne-signature-data'); const date=document.getElementById('movne-signature-date');
+          if(this.isEmpty()){ status.textContent='לא נחתם'; status.className='movne-signature-status'; input.value=''; }
+          else { status.textContent='נחתם ✓'; status.className='movne-signature-status signed'; input.value=this.canvas.toDataURL('image/png'); date.value=(new Date()).toLocaleDateString('he-IL'); }
+        }
+      }
+
+      // Progress tracker
+      function updateProgress(){ const form=document.getElementById('movne-investor-form'); const fill=document.getElementById('movne-progress-fill'); if(!form||!fill) return; const req=form.querySelectorAll('input[required], select[required]').length; let done=0; form.querySelectorAll('input[required], select[required]').forEach(f=>{ if((f.type==='checkbox'&&f.checked)||(f.type!=='checkbox'&&f.value.trim()!=='')) done++; }); const canvas=document.getElementById('movne-signature-canvas'); if(window._sig && !window._sig.isEmpty()) done++; const pct=Math.min(Math.round(((done)/(req+1))*100),100); fill.style.width=pct+'%'; }
+
+      // Init
+      (function(){
+        const canvas=document.getElementById('movne-signature-canvas');
+        if(canvas){ window._sig=new SimpleSignaturePad(canvas); document.getElementById('movne-clear-signature').addEventListener('click', ()=>window._sig.clear()); }
+        document.getElementById('movne-investor-form').addEventListener('input', updateProgress);
+        document.getElementById('movne-investor-form').addEventListener('submit', function(e){ e.preventDefault(); // PREVIEW MODE: No network call
+          // Basic validation
+          const form=e.target; if(!form.checkValidity()){ alert('אנא מלאו את כל השדות הנדרשים'); return; }
+          document.getElementById('movne-success-message').style.display='block'; form.reset(); if(window._sig) window._sig.clear(); updateProgress();
+        });
+        updateProgress();
+      })();
+    </script>
+  </body>
+  </html>
+
